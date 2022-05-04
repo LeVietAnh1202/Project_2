@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Routing with pure Javascript</title>
+</head>
+<body>
+<div class="container-app">
+    <div>
+        <ul>
+            <li><a href="javascript:App.navigateTo('/home')">Home</a> </li>
+            <li><a href="javascript:App.navigateTo('/aboutus')">About US</a> </li>
+            <li><a href="javascript:App.navigateTo('/contactus')">Contact US</a> </li>
+            <li><a href="javascript:App.navigateTo('/services')">Services</a> </li>
+        </ul>
+    </div>
+</div>
+
+<!-- <script src="{{cdn}}/jquery.js"></script>  -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="../frontend/js/js-route.js"></script>
+<script src="../frontend/js/app.js"></script>
+<script>
+    $(document).ready(function () {
+        if(App){
+            App.init();
+        }
+    });
+</script>
+</body>
+</html>
