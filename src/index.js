@@ -11,7 +11,8 @@ const db = require('./config/db');
 db.connect();
 
 const app = express();
-const port = 3000;
+// const port = 3000;
+const port = process.env.PORT;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '..', 'node_modules', 'bootstrap', 'dist')));
