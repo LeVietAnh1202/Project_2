@@ -4,7 +4,7 @@
   "description": "",
   "main": "src\\index.js",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "node ./app/index.js",
     "dev": "nodemon --inspect app\\index.js",
     "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
     "beautiful": "lint-staged",
