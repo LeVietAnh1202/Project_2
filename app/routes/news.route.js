@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const newsController = require('../app1/controllers/NewsController');
+const newsController = require('../src/controllers/NewsController');
 
 router.get('/:slug', newsController.show);
 
