@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const { engine } = require('express-handlebars');
+const cors = require('cors');
 
 const route = require('./routes/index.route');
 const db = require('./config/db');
@@ -11,8 +12,7 @@ const db = require('./config/db');
 db.connect();
 
 const app = express();
-// const port = 3000;
-const port = process.env.PORT;
+const port = process.env.PORT | 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '..', 'node_modules', 'bootstrap', 'dist')));
@@ -21,6 +21,8 @@ app.use(express.static(path.join(__dirname, '..', 'node_modules', 'popper.js', '
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
  
+app.use(cors());
+
 // HTTP logger
 app.use(morgan('combined'));
 
