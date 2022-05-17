@@ -1,0 +1,99 @@
+.sidebar-with-content {
+    display: flex;
+}
+
+.sidebar {
+    min-width: $min-width-sidebar;
+    height: calc(100vh - 66px);
+    background-color: $sidebar-background--dark;
+    padding: 0 8px;
+    position: sticky;
+    top: $header-heigh;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #343A40;
+        border-radius: 6px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: #A4A6A8;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #A4A6A8;
+    }
+
+    .list-unstyled {
+        list-style: none;
+    }
+
+    ul {
+        li {
+            .menu-link {
+                margin-bottom: 0.3rem;
+            }
+
+            .submenu-link {
+                margin-left: 1.5rem;
+            }
+
+            .menu-link,
+            .submenu-link {
+                padding: 10px;
+                font-size: $sidebar-menu-font-size;
+                display: block;
+                background-color: transparent;
+                color: $sidebar-color;
+            }
+
+            &.active .menu-link,
+            .active {
+                border-radius: $sidebar-radius;
+            }
+
+            &.active .menu-link {
+                color: $sidebar-menu-color--active;
+                background: $sidebar-menu-background--active;
+            }
+
+            .dropdown-toggle::after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+            }
+
+            a[data-toggle="collapse"] {
+                position: relative;
+            }
+
+            &.active ul .submenu-link {
+                font-size: $sidebar-submenu-font-size  !important;
+                // padding-left: 30px !important;
+
+                &.active {
+                    color: $sidebar-submenu-color--active;
+                    background: $sidebar-submenu-background--active;
+                }
+
+                &:hover:not(.submenu-link.active) {
+                    background-color: rgba($color: #fff, $alpha: .1);
+                    border-radius: $sidebar-radius;
+                }
+            }
+        }
+
+    }
+}

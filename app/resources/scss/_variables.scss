@@ -1,1 +1,22 @@
+$header-heigh: 66px;
+$user-menu-width: 230px;
+$min-width-sidebar: 250px;
+
+// COLOR
 $red-color: red;
+$sidebar-background--dark: #343a40;
+$sidebar-color: #c2c7d0;
+$sidebar-menu-background--active: #007bff;
+$sidebar-menu-color--active: #fff;
+$sidebar-submenu-background--active: rgba(255,255,255,.9);
+$sidebar-submenu-color--active: #343a40;
+
+// FONT
+$font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
+// FONT-SIZE
+$sidebar-menu-font-size: 1.4em;
+$sidebar-submenu-font-size: 1.4em;
+
+// BORDER-RADIUS
+$sidebar-radius: 0.5rem;

@@ -6,17 +6,21 @@ const { engine } = require('express-handlebars');
 const cors = require('cors');
 
 const route = require('./routes/index.route');
+// const db = require('./config/db');
 const db = require('./config/db');
 
 // Connect to DB
-db.connect();
+// db.connect();
+
 
 const app = express();
 const port = process.env.PORT | 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'node_modules')));
 app.use(express.static(path.join(__dirname, '..', 'node_modules', 'bootstrap', 'dist')));
 app.use(express.static(path.join(__dirname, '..', 'node_modules', 'popper.js', 'dist')));
+app.use(express.static(path.join(__dirname, 'resources', 'view-csr')));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
