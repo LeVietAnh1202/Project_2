@@ -31,8 +31,8 @@ class SiteController {
         //     .catch(next); // .catch(error => next(error));
 
         // csr
-        // res.sendFile(path.join(__dirname, '../../resources/view-csr/layouts/cms.html'))
-        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/login.html'))
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/layouts/cms.html'))
+        // res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/login.html'))
     }
 
 }
