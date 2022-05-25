@@ -1,0 +1,36 @@
+
+form {
+    // font-size: 14px !important;
+    label, input, .custom-select, .form-control {
+        font-size: $search-box !important;
+    }
+
+    .form-control {
+        padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+        border-radius: $radius-default;
+        .valid-feedback, .invalid-feedback {
+            padding: 0.6rem 3.6rem 0.6rem 1.2rem;
+        }
+    }
+
+    .input-group:not(.has-validation)>.form-control:not(:last-child) {
+        @include border-right-radius($radius-default);
+    }
+
+    .input-group-text {
+        border-radius: $radius-default;
+    }
+    
+    .valid-feedback, .invalid-feedback {
+        font-size: $form-feedback-font-size !important;
+    }
+    
+    .form-check {
+        padding-left: 2rem !important;
+    }
+    
+    .form-check-input {
+        margin-left: -2rem !important;
+        margin-top: 0.48rem !important;
+    }
+}

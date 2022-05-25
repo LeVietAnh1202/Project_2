@@ -1,0 +1,156 @@
+@mixin avatar--round ($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header {
+    height: $header-heigh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e8ebed;
+    padding: 0 28px;
+    position: -webkit-sticky;
+    position: sticky;
+    inset: 0 0 auto;
+    z-index: 10;
+
+    &__logo,
+    &__body,
+    &__actions {
+        flex: 1 1;
+    }
+
+    .fa-bars {
+        display: none;
+        padding: 10px;
+        margin-left: 1.5rem;
+        background-color: #707070;
+        border-radius: $radius-default;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-left: 16px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .fa-bell {
+            color: #707070;
+            font-size: 1.8rem;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .header__avatar {
+            @include avatar--round(28px);
+            margin-left: 12px;
+            cursor: pointer;
+        }
+
+        .user-menu {
+            z-index: 400;
+            position: absolute;
+            inset: 0px 0px auto auto;
+            margin: 0px;
+            // transform: translate3d(-28px, 56.8px, 0px);
+            transform: translate(-28px, 56.8px);
+            display: none;
+
+            &__wrapper {
+                // animation: Tippy-module_fadeIn__2LeID .3s ease;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.2);
+                color: #1d2129;
+                margin: 0;
+                overflow: hidden;
+                transition: all .3s ease-in-out;
+                will-change: opacity, transform;
+
+                list-style-type: none;
+                min-width: $user-menu-width;
+                padding: 0.8rem 2.4rem !important;
+
+                hr {
+                    border: none;
+                    border-top: 1px solid rgba(0, 0, 0, .05);
+                    margin: 8px 0;
+                }
+            }
+
+            &__user {
+                display: flex;
+                align-items: center;
+            }
+
+            &__avatar {
+                @include avatar--round(5rem);
+                margin: 10px 0;
+            }
+
+            &__infor {
+                margin-left: 12px;
+            }
+
+            &__name {
+                color: #292929;
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+
+            &__user-name {
+                color: #757575;
+                font-size: 1.4rem;
+                margin-top: 4px;
+            }
+
+            ul {
+                list-style-type: none;
+
+                a {
+                    color: #666;
+                    display: block;
+                    font-size: 1.4rem;
+                    padding: 10px 0;
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    // [class*="col-"] {
+    //   width: 100%;
+    // }
+
+    .header {
+        min-width: 100%;
+        &__title {
+            display: none;
+        }
+
+        .fa-bars {
+            display: block;
+        }
+    }
+}

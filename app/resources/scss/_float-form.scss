@@ -1,0 +1,78 @@
+.float-form {
+    position: fixed;
+    z-index: 15;
+    inset: 0;
+    display: flex;
+    @include center();
+
+    form[name$=form] {
+        min-width: calc(100vw - (#{$min-width-sidebar} + 3rem) * 2);
+    }
+
+    &--blur {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($color: #000000, $alpha: .4);
+    }
+
+    &__top {
+        padding: 1rem 2rem;
+    }
+    
+    &__body {
+        background-color: white;
+        border-radius: $radius-default * 2;
+        border: 1.5px solid rgba(rgb(36, 56, 128), .7);
+        position: absolute;
+        z-index: 20;
+        
+        &[name$=form] {
+            // left: calc(#{$min-width-sidebar} * 1.5);
+            margin-left: $min-width-sidebar;
+        }
+    }
+    
+    &__title, &__content {
+        margin-bottom: 1rem;
+    }
+    
+    &__title {
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+
+    &__content {
+        padding: 0 1rem;
+
+        .fa-question-circle-o {
+            font-size: 1.8rem;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .confirm-delete {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid rgba(#000, .2);
+        padding: 0.5rem 2rem;
+
+        .btn {
+            margin-left: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .float-form {
+        &__body {
+            &[name$=form] {
+                margin: 0 1rem;
+            }
+        }
+    }
+}

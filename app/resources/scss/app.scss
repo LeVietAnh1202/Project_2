@@ -1,0 +1,54 @@
+@import 'variables';
+@import 'border-radius';
+@import 'form';
+@import 'button';
+@import './utilities/box';
+@import './utilities/mixin';
+@import './login/login';
+@import 'loading-screen';
+@import 'header';
+@import 'sidebar';
+@import 'navbar';
+@import 'search-box';
+@import 'table';
+@import 'float-form';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // letter-spacing: 1px;
+}
+
+html {
+    font-size: 10px;    
+    line-height: 1.15;
+    font-family: $font-family;
+}   
+            
+body, table {
+    color: $text-color !important;
+    font-size: 1.4rem !important;
+}
+
+body {
+    position: relative;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.main-content {
+    width: 100%;
+    // background-color: #f4f6f9;
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 9px;
+    }
+    .main-content {
+        max-width: 100%;
+    }
+}
