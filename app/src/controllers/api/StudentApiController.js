@@ -1,6 +1,6 @@
-const Course = require('../models/Course');
-const { multipleMongooseToObject } = require('../../util/mongoose');
-const db = require('../../config/db/sql');
+const Course = require('../../models/Course');
+const { multipleMongooseToObject } = require('../../../util/mongoose');
+const db = require('../../../config/db/sql');
 
 class StudentController {
     // [GET] /

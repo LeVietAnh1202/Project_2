@@ -9,8 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
@@ -18,46 +17,242 @@
 </head>
 
 <body>
+    <!-- Loading screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="spinner__container">
+            <img src="/img/loading.svg" />
+            <div class="spinner"></div>
+        </div>
+        <p>Loading your dashboard...</p>
+    </div>
+    <!-- ./loading screen -->
+
     <div class="header include-html" data-file="partials/header.html"></div>
     <div class="sidebar-with-content">
         <div class="sidebar pt-2 include-html" data-file="partials/sidebar.html"></div>
-        <div class="main-content" >
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
-            <h1>Main content</h1>
+        <div class="main-content">
+            <div class="background-white"></div>
+            <div class="navbar">
+                <div class="nav-address">
+                    <ul>
+                        <li><a href="">Trang chủ</a></li>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <li><a href="">Thông tin doanh nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <button class="btn btn-new-info">Thêm</button>
+            </div>
+
+            <div class="search">
+                <div class="heading">
+                    <p>Tìm kiếm</p>
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </div>
+
+                <!-- Search from -->
+                <form class="container pb-4 pt-4">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-4">
+                            <label for="id-doanh-nghiep">Mã viết tắt DN</label>
+                            <input type="text" class="form-control" id="id-doanh-nghiep" value="FPT" required>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="ten-doanh-nghiep">Tên doanh nghiệp</label>
+                            <input type="text" class="form-control" id="ten-doanh-nghiep"
+                                value="Công ty Cổ phần Viễn thông FPT" required>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="ngay-thanh-lap">Ngày thành lập</label>
+                            <input type="date" class="form-control" id="ngay-thanh-lap" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-4">
+                            <label for="loai-hinh">Loại hình</label>
+                            <input type="text" class="form-control" id="loai-hinh" value="Công ty phần mềm" required>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="website">Website</label>
+                            <input type="text" class="form-control" id="website">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                </form>
+
+            </div>
+
+            <!-- Table database -->
+            <div class="table-db mt-4">
+                <table class="table table-bordered table-hover table-responsive-md">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="selectAll" id="selectAll"></th>
+                            <th scope="col">#</th>
+                            <th scope="col">Mã viết tắt DN</th>
+                            <th scope="col">Tên doanh nghiệp</th>
+                            <th scope="col">Ngày thành lập</th>
+                            <th scope="col">Loại hình</th>
+                            <th scope="col">Website</th>
+                            <th colspan="2">Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>1</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>2</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="2" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>3</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="3" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>4</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="4" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>5</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="5" aria-hidden="true"></i></td>
+                        </tr>
+                        <!-- <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>6</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>7</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>8</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>9</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                            <td>10</td>
+                            <td>FPT</td>
+                            <td>Công ty Cổ phần Viễn thông FPT</td>
+                            <td>13/09/1988</td>
+                            <td>Công ty phần mềm</td>
+                            <td>http://fpt.com.vn</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <div class="page-number">
+                    <p>Hiển thị bản ghi từ 1 đến 10 trên tổng số 30</p>
+                    <ul>
+                        <li class="disabled">Previous</li>
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>Next</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.table-db -->
         </div>
+        <!-- /.main-content -->
         <!-- <div class="footer include-html" data-file="partials/footer.html"></div> -->
     </div>
-    
+    <!-- /.sidebar-with-content -->
+
+    <!-- <div class="confirm-delete">
+        <div class="confirm-delete__wrapper"></div>
+        <div class="confirm-delete__body">
+            <div class="confirm-delete__top">
+                <div class="confirm-delete__title">
+                    Xác nhận
+                </div>
+                <div class="confirm-delete__content">
+                    <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                    <div>Bạn có chắc chắn muốn chuyển vào thùng rác không?</div>
+                </div>
+            </div>
+            <div class="confirm-delete__button">
+                <div class="btn btn-success">Đồng ý</div>
+                <div class="btn btn-secondary">Thoát</div>
+            </div>
+        </div>
+    </div> -->
+
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/main.js" type="module"></script>
 </body>

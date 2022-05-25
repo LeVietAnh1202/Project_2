@@ -1,6 +1,6 @@
-const Course = require('../models/Course');
-const { multipleMongooseToObject } = require('../../util/mongoose');
-const db = require('../../config/db/sql');
+const Course = require('../../models/Course');
+const { multipleMongooseToObject } = require('../../../util/mongoose');
+const db = require('../../../config/db/sql');
 const path = require('path');
 
 class TestController {
@@ -20,6 +20,11 @@ class TestController {
     show(req, res, next) {
         // res.send(path.join(__dirname, '../../../../Front-end/resources/views/test.html'));
         res.sendFile(path.join(__dirname, '../../../../Front-end/resources/views/test.html'));
+    }
+
+    // [POST] /send
+    send(req, res, next) {
+        res.send(req.body);
     }
 
 }

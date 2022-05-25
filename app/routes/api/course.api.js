@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const courseController = require('../src/controllers/CourseController');
+const courseApiController = require('../../src/controllers/api/CourseApiController');
 
 // router.get('/search', courseController.search);
 
-router.get('/', courseController.index);
+router.get('/', courseApiController.index);
 
 module.exports = router;

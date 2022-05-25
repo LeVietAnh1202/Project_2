@@ -1,0 +1,59 @@
+.loading-screen {
+    width: 100vw;
+    height: 100vh;
+    background-color: $loading-screen-background;
+    display: flex;
+    @include center();
+    flex-direction: column;
+    inset: 0;
+    position: fixed;
+    // cursor: none;
+    z-index: 500;
+
+    .spinner {
+        width: $spinner-size  !important;
+        height: $spinner-size  !important;
+        background: linear-gradient(180deg, #0f6fff 0%, rgba(0, 0, 0, 0.1) 25%);
+        border-radius: 50%;
+        display: flex;
+        @include center();
+        animation: spin 2s cubic-bezier(.52, .1, .27, .87) infinite;
+        position: relative;
+
+        &__container {
+            display: flex;
+            @include center();
+
+            img {
+                height: $spinner-size / 100 * 75;
+                width: $spinner-size / 100 * 75;
+                border-radius: 50%;
+                object-fit: cover;
+                position: absolute;
+                z-index: 2;
+                object-position: center;
+            }
+        }
+
+        &::after {
+            content: "";
+            width: calc(100% - 0.4rem);
+            height: calc(100% - 0.4rem);
+            border-radius: 50%;
+            background: $loading-screen-background;
+            z-index: 1;
+        }
+    }
+
+    p {
+        color: $loading-screen-color;
+        opacity: 0.6;
+        font-weight: 300;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

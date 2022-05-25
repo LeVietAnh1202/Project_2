@@ -7,14 +7,13 @@ const cors = require('cors');
 
 const route = require('./routes/index.route');
 // const db = require('./config/db');
-const db = require('./config/db');
+const db = require('./config/db/mg');
 
 // Connect to DB
 // db.connect();
 
-
 const app = express();
-const port = process.env.PORT | 3000;
+const port = process.env.port | 1202;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '..', 'node_modules')));

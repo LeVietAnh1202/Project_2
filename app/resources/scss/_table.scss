@@ -1,0 +1,95 @@
+.table-db {
+    // margin: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+
+    .table {
+        margin: 0;
+    }
+
+    table {
+        min-width: 50vw;
+        thead tr {
+            background-color: rgba(#707070, .1);
+        }
+
+        thead tr th:first-child,
+        thead tr th:last-child,
+        tbody tr th,
+        tbody tr td:last-child,
+        tbody tr td:nth-last-child(2) {
+            text-align: center;
+        }
+    }
+
+
+    .page-number {
+        background-color: rgba(#000, .03);
+        padding: 1.2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p,
+        ul {
+            margin-bottom: 0;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            
+            li {
+                background-color: $page-number-background;
+                color: $page-number-color;
+                line-height: 1.5;
+                padding: 0.5rem 1rem;
+                border: 1px solid #dee2e6;
+                cursor: pointer;
+                
+                &:not(:last-child) {
+                    border-right-width: 0;
+                }
+
+                &.disabled, &.active {
+                    cursor: none;
+                    pointer-events: none;
+                }
+
+                &.disabled{
+                    color: $page-number-color--disabled;
+                }
+
+                &.active {
+                    background-color: $page-number-background--active;
+                    color: $page-number-color--active;
+                }
+
+                &:first-child {
+                    @include border-left-radius(0.5rem);
+                }
+
+                &:last-child {
+                    @include border-right-radius(0.5rem);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .table-db {
+        table thead tr th {
+            vertical-align: top !important;
+        }
+    }
+
+    .page-number {
+        display: block !important;
+        padding-bottom: 3rem !important;
+
+        p {
+            margin-bottom: 1.2rem !important;
+        }
+    }
+}

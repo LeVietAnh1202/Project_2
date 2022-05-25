@@ -1,0 +1,22 @@
+@mixin btn-custom ($color, $bg-color) {
+    color: $color;
+    background-color: $bg-color;
+}
+
+.btn {
+    font-size: 1.4rem;
+    border-radius: 0.5rem !important;
+    padding: 0.6rem 1.2rem !important;
+
+    &-new-info, &-insert, &-edit, &-agree {
+        @include btn-custom($btn-color--success, $btn-background--success);
+    }
+
+    &-reset {
+        @include btn-custom($btn-color--info, $btn-background--info);
+    }
+
+    &-exit {
+        @include btn-custom($btn-color--secondary, $btn-background--secondary);
+    }
+}

@@ -1,0 +1,29 @@
+.search {
+    @include box-1();
+    // background-color: #ffffff;
+    background-color: #f4f6f9;
+
+    .heading {
+        padding: 8px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: $search-box-heading;
+        background-color: rgba($color: #707070, $alpha: .1);
+        @include border-top-radius($navbar-search-radius - 0.1rem);
+
+        p,
+        i {
+            font-size: inherit;
+            font-weight: bold;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        i {
+            align-items: flex-end;
+        }
+    }
+}

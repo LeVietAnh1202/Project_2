@@ -1,8 +1,10 @@
-const newsRouter = require('./news.route');
+// const newsRouter = require('./api/news.route');
+const siteApiRouter = require('./api/site.api');
+const courseApiRouter = require('./api/course.api');
+const studentApiRouter = require('./api/student.api');
+const testApiRouter = require('./api/test.api');
+
 const siteRouter = require('./site.route');
-const courseRouter = require('./course.route');
-const studentRouter = require('./student.route');
-const testRouter = require('./test.route');
 
 function route(app) {
     // app.all('/', function(req, res, next) {
@@ -11,13 +13,15 @@ function route(app) {
     //     next()
     //   });
 
-    app.use('/test', testRouter);
+    app.use('/api/test', testApiRouter);
 
-    app.use('/student', studentRouter);
+    app.use('/api/student', studentApiRouter);
 
-    app.use('/news', newsRouter);
+    // app.use('/api/news', newsApiRouter);
 
-    app.use('/course', courseRouter);
+    app.use('/api/course', courseApiRouter);
+
+    app.use('/api', siteApiRouter);
 
     app.use('/', siteRouter);
 }
