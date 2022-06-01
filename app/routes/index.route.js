@@ -1,4 +1,6 @@
 // const newsRouter = require('./api/news.route');
+const loginApiRouter = require('./api/login.api');
+const accountApiRouter = require('./api/account.api');
 const siteApiRouter = require('./api/site.api');
 const courseApiRouter = require('./api/course.api');
 const studentApiRouter = require('./api/student.api');
@@ -12,6 +14,10 @@ function route(app) {
     //     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     //     next()
     //   });
+
+    app.use('/api/login', loginApiRouter);
+
+    app.use('/api/account', accountApiRouter);
 
     app.use('/api/test', testApiRouter);
 

@@ -125,11 +125,15 @@
             ul {
                 list-style-type: none;
 
-                a {
-                    color: #666;
-                    display: block;
-                    font-size: 1.4rem;
-                    padding: 10px 0;
+                li {
+                    cursor: pointer;
+                    
+                    a {
+                        color: #666;
+                        display: block;
+                        font-size: 1.4rem;
+                        padding: 10px 0;
+                    }
                 }
             }
 

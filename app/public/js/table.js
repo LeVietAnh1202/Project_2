@@ -1,68 +1,69 @@
-let pageActive = $('.page-number li:nth-child(2)');
-const pageNumberLast = $('.page-number li:nth-last-child(2)').text();
-let pageNumberSelected;
-const pageList = $('.page-number li:not(:first-child, :last-child)');
-const previous = $('.page-number li:first-child');
-const next = $('.page-number li:last-child');
-
-function selectPageNumber() {
-
-    // Chọn trang muốn hiển thị
-    pageList.click((e) => {
-        pageNumberSelected = $(e.target);   // Thẻ li của trang được chọn
-        changePageNumber()
-    });
-
-    // Bấm nút Privious để chọn trang trước đó
-    previous.click(() => {
-        pageNumberSelected = pageActive.prev();
-        changePageNumber();
-    });
-    
-    // Bấm nút next để chọn trang tiếp theo
-    next.click(() => {
-        pageNumberSelected = pageActive.next();
-        changePageNumber();
-    });
-
-}
-
-// Đổi active sang trang được chọn
-function activePageNumber() {
-    console.assert('1');
-    pageActive.removeClass('active');
-    pageNumberSelected.addClass('active');
-    pageActive = pageNumberSelected;
-}
-
-// Nếu trang đầu tiên được chọn thì hủy kích hoạt nút Previous
-function checkPrevious() {
-    console.assert('2');
-    if (pageActive.text() != 1) {
-        previous.removeClass('disabled');
+export default class Table {
+    constructor (headings) {
+        this.headings = headings;
     }
-    else {
-        previous.addClass('disabled');
-    }
-}
 
-// Nếu trang cuối cùng được chọn thì hủy kích hoạt nút Next
-function checkNext() {
-    console.assert('3');
-    if (pageActive.text() != pageNumberLast) {
-        next.removeClass('disabled');
+    headingContent () {
+        return this.headings.map(heading => `<th scope="col">${heading}</th>`).join('')
     }
-    else {
-        next.addClass('disabled');
+
+    bodyContent(allAccount, page, pageSize) {
+        let pageNumber = (page - 1) * pageSize;
+        return allAccount.map(account => 
+            `<tr>
+                <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
+                <td>${++pageNumber}</td>
+                <td>${account.role_name}</td>
+                <td>${account.account}</td>
+                <td>${account.password}</td>
+                <td>${account.avatar}</td>
+                <td>${account.full_name}</td>
+                <td>${account.gender == 1 ? 'Nam' : 'Nữ'}</td>
+                <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
+            </tr>`
+        ).join('');
     }
-}
 
-function changePageNumber() {
-    activePageNumber();
-    checkPrevious();
-    checkNext();
-}
+    createTbl(allAccount, page, pageSize) {
+        let thead = `
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="selectAll" id="selectAll"></th>
+                    <th scope="col">#</th>
+                    ${this.headingContent()}
+                    <th colspan="2">Tác vụ</th>
+                </tr>
+            </thead>
+        `;
 
-export default () => {
-    selectPageNumber();
-}
+        let tbody = `
+            <tbody>
+                ${this.bodyContent(allAccount, page, pageSize)}
+            </tbody>
+        `;
+
+        let tblDb = `
+            <div class="table-db mt-4">
+                <table class="table table-bordered table-hover table-responsive-md">
+                    ${thead}
+                    ${tbody}
+                </table>
+                <div class="page-number">
+                    <p>Hiển thị bản ghi từ 1 đến 10 trên tổng số 30</p>
+                    <ul>
+                        <li class="disabled">Previous</li>
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>Next</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+        $('.table-db').remove();
+        $('.search').after(tblDb);
+    }
+};

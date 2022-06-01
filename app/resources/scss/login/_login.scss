@@ -14,27 +14,25 @@ $purple: #4B70E2;
 $transition: 1.25s;
 
 .login-screen {
-    width: 100%;
+    // background: linear-gradient(to bottom right, #33ccff 0%, #cc66ff 100%);
+    background: linear-gradient(to bottom right, #d8fafa 0%, #f7def7 100%);    width: 100%;
     height: 100vh;
     display: flex;
     @include center();
-    // font-size: 12px;
     color: $gray;
 }
 
 .login-container{
     position: relative;
-    // width: 1000px;
-    min-width: 1000px;
-    min-height: 600px;
-    // height: 600px;
-    // padding: 25px;
+    min-width: 100rem;
+    min-height: 60rem;
 	background-color: $login-background;
 	box-shadow:
-		10px 10px 10px $login-box-shadow-2,
-		-10px -10px 10px $login-box-shadow-1;
-	border-radius: 12px;
+		1rem 1rem 1rem $login-box-shadow-2,
+		-1rem -1rem 1rem $login-box-shadow-1;
+	border-radius: 1.2rem;
 	overflow: hidden;
+
 	@media(max-width: 1200px){  transform: scale(.7); }
 	@media(max-width: 1000px){  transform: scale(.6); }
 	@media(max-width: 800px){  transform: scale(.5); }
@@ -44,10 +42,8 @@ $transition: 1.25s;
         display: flex;
         @include center();
         position: absolute;
-        // top: 0;
-        width: 600px;
+        width: 60rem;
         height: 100%;
-        // padding: 25px;
         background-color: $login-background;
     }
     
@@ -55,27 +51,31 @@ $transition: 1.25s;
         display: flex;
         @include center();
         flex-direction: column;
-        // width: 100%;
-        // height: 100%;
-    
-        &__input, &__role{
-            width: 35rem;
-            height: 4rem;
+        
+        .input-sample {
             margin: 0.4rem 0;
-
-            padding-left: 2.5rem;
-            // font-size: 13px;
             letter-spacing: .015rem;
             border: none;
             outline: none;
-    
             background-color: $login-background;
             // transition: .25s ease;
             border-radius: 0.8rem;
-    
             box-shadow:
-                inset .2rem .2rem .4rem $login-box-shadow-2,
-                inset -.2rem -.2rem .4rem $login-box-shadow-1;
+            inset .2rem .2rem .4rem $login-box-shadow-2,
+            inset -.2rem -.2rem .4rem $login-box-shadow-1;
+            
+        }
+
+        .input-group-append {
+            @extend .input-sample;
+            @include border-left-radius(0);
+        }
+        
+        &__input, &__role {
+            padding-left: 2.5rem;
+            @extend .input-sample;
+            width: 35rem;
+            height: 4rem;
     
             &:focus{
                 box-shadow:
@@ -84,27 +84,28 @@ $transition: 1.25s;
             }
         }
 
-        .password-group {
-            display: flex;
+        .input-group {
+            input {
+                flex: 1 1 auto;
+                width: 1%;
+
+                &:not(:last-child) {
+                    @include border-right-radius(0);
+                }
+            }
 
             &--append {
-                min-width: 1.5rem;
-                min-height: 1.5rem;
+                margin-left: -1rem;
             }
 
-            .fa-eye {
-                width: 100%;
-                height: 100%;
-                // margin-left: -50px;
-                // margin-top: 50px;
-                z-index: 200;
+            .fa-eye, .fa-eye-slash {
+                font-size: 1.6rem;
+                padding: 0 1.2rem;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
             }
         }
-
-        // &__span{
-        //     margin-top: 30px;
-        //     margin-bottom: 12px;
-        // }
 
         &__link{
             color: $black;
@@ -115,7 +116,7 @@ $transition: 1.25s;
         }
 
         &__title {
-            font-size: 34px;
+            font-size: 3.4rem;
             font-weight: 700;
             line-height: 3;
             color: $black;
@@ -133,49 +134,46 @@ $transition: 1.25s;
             background-color: $purple;
             color: $login-button-color;
             box-shadow:
-            8px 8px 16px $login-box-shadow-2,
-            -8px -8px 16px $login-box-shadow-1;
+            .8rem .8rem 1.6rem $login-box-shadow-2,
+            -.8rem -.8rem 1.6rem $login-box-shadow-1;
             
             border: none;
             outline: none;
         }
+
+        &__button {
+            cursor: pointer;
+            &:hover{
+                box-shadow:
+                    .6rem .6rem 1rem $login-box-shadow-2,
+                    -.6rem -.6rem 1rem $login-box-shadow-1;
+                transform: scale(.985);
+                transition: .25s;
+            }
+            &:active,
+            &:focus{
+                box-shadow:
+                    .2rem .2rem .6rem $login-box-shadow-2,
+                    -.2rem -.2rem .6rem $login-box-shadow-1;
+                transform: scale(.97);
+                transition: .25s;
+            }
+        }
     }
 }
-
-// .form-login__title, .switch__title{
-//     font-size: 34px;
-//     font-weight: 700;
-//     line-height: 3;
-//     color: $black;
-// }
-
-
-/**/
-
-// .login-container--left{
-//     left: calc(100% - 600px );
-//     z-index: 0;
-// }
 
 .switch{
     display: flex;
     @include center();
     position: absolute;
-    // top: 0;
-    // left: 0;
     height: 100%;
-    width: 400px;
-
-    // padding: 50px;
-    // z-index: 1;
+    width: 40rem;
     transition: $transition;
-
     background-color: $login-background;
     overflow: hidden;
-
 	box-shadow:
-		4px 4px 10px $login-box-shadow-2,
-		-4px -4px 10px $login-box-shadow-1;
+		.4rem .4rem 1rem $login-box-shadow-2,
+		-.4rem -.4rem 1rem $login-box-shadow-1;
 
     &__title {
         @extend .form-login__title;
@@ -195,12 +193,12 @@ $transition: 1.25s;
         border-radius: 50%;
 		background-color: $login-background;
 		box-shadow:
-			inset 8px 8px 12px $login-box-shadow-2,
-			inset -8px -8px 12px $login-box-shadow-1;
+			inset .8rem .8rem 1.2rem $login-box-shadow-2,
+			inset -.8rem -.8rem 1.2rem $login-box-shadow-1;
 
         bottom: -60%;
         left: -50%;
-        transition: $transition;
+        // transition: $transition;
 
         &--t{
             top: -30%;
@@ -215,55 +213,38 @@ $transition: 1.25s;
         @include center();
         flex-direction: column;
         position: absolute;
-        width: 400px;
-        padding: 50px 55px;
+        width: 40rem;
+        padding: 5rem 5.5rem;
         transition: $transition ;
     }
-
-    &__button{
-        cursor: pointer;
-		&:hover{
-			box-shadow:
-				6px 6px 10px $login-box-shadow-2,
-				-6px -6px 10px $login-box-shadow-1;
-			transform: scale(.985);
-			transition: .25s;
-		}
-		&:active,
-		&:focus{
-			box-shadow:
-				2px 2px 6px $login-box-shadow-2,
-				-2px -2px 6px $login-box-shadow-1;
-			transform: scale(.97);
-			transition: .25s;
-		}
-    }
 }
-/**/
+
+
 .is-txr{
-    left: calc(100% - 400px );
+    left: calc(100% - 40rem );
     transition: $transition;
     transform-origin: left;
 }
-.is-txl{
-    left: 0;
-    transition: $transition;
-    transform-origin: right;
-}
-.is-z200{
-    z-index: 200;
-    transition: $transition;
-}
-.is-hidden{
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    transition: $transition;
-}
-.is-gx{
-    animation: is-gx $transition;
-}
-@keyframes is-gx {
-    0%, 10%, 100%{ width: 400px; }
-    30%, 50%{ width: 500px;}
-}
+
+// .is-txl{
+//     left: 0;
+//     transition: $transition;
+//     transform-origin: right;
+// }
+// .is-z200{
+//     z-index: 200;
+//     transition: $transition;
+// }
+// .is-hidden{
+//     visibility: hidden;
+//     opacity: 0;
+//     position: absolute;
+//     transition: $transition;
+// }
+// .is-gx{
+//     animation: is-gx $transition;
+// }
+// @keyframes is-gx {
+//     0%, 10%, 100%{ width: 400px; }
+//     30%, 50%{ width: 500px;}
+// }

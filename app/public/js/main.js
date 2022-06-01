@@ -1,8 +1,10 @@
+import login from "./login.js";
 import loadingScreen from "./loading-screen.js";
 import header from "./header.js";
 import sideBar from "./sidebar.js";
 import searchBox from "./search-box.js";
 import updateDatabase from "./update-database.js";
+import account from "./account/account.js";
 
 function includeHTML(callback) {
     var i, elem, file, xhttp; // Khởi tạo các biến
@@ -64,12 +66,17 @@ function includeHTML(callback) {
 
 // promise.then(function (data) {header(data)}, () => {});
 console.time('test')
+
+login();
+
 includeHTML(async () => {
     header();
     await sideBar();
     loadingScreen();
     searchBox();
-    updateDatabase();
+    // updateDatabase();
+    //account();
+    
 })
 
 

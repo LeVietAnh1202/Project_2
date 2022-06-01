@@ -4,7 +4,7 @@ const db = require('../../config/db/sql');
 const path = require('path');
 
 class SiteController {
-    // [GET] /home
+    // [GET] /
     index(req, res, next) {
         // handlebars
         // Dùng CallBack Function
@@ -31,8 +31,12 @@ class SiteController {
         //     .catch(next); // .catch(error => next(error));
 
         // csr
+        // res.sendFile(path.join(__dirname, '../../resources/view-csr/layouts/cms.html'))
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/login.html'))
+    }
+    
+    home(req, res, next) {
         res.sendFile(path.join(__dirname, '../../resources/view-csr/layouts/cms.html'))
-        // res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/login.html'))
     }
 
 }
