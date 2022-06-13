@@ -33,8 +33,8 @@ const originUrl = window.location.origin;
 const sidebarApi = originUrl + '/api/sidebar';
 
 // Lấy dữ liệu từ database và tạo sidebar
-async function start() {
-    await getApi(sidebarApi, sideBar_render);
+async function start(param) {
+    await getApi(sidebarApi + param, sideBar_render);
 }
 
 // Gọi api lấy dữ liệu
@@ -55,7 +55,7 @@ function sideBar_render(sideBar_arr) {
     sideBar_arr.map((menu_db, menu_i) => {
         sideBar_html += menu_i == 0 ? '<li class="active">' : '<li>';
         let submenu_arr = menu_db.submenu_arr;
-        console.log(menu_db)
+        
         if ($.isEmptyObject(submenu_arr[0])) {
             sideBar_html += `
                     <a href="" data-link="${menu_db.menu_url}" class="menu-link">${menu_db.menu_item_name}</a>
@@ -85,13 +85,18 @@ function changeUrlAndRouting(pathName) {
 }
 
 // Active các menu và submenu được chọn ở sidebar
+
+
 function selectMenuItem() {
     const menuLinkListParent = $('.menu-link').parent();
     const menuLinkList = $('.menu-link');
     const submenuLinkList = $('.submenu-link');
 
+    
     menuLinkList.each((index, value) => {
         $(value).click(() => {
+            $('.btn-new-info').off('click');                // Xóa sự kiện click từ lần chọn menu sidebar trước
+            
             // Nếu menu này không có các submenu thì các menu được chọn
             if (!$(value).hasClass('dropdown-toggle')) {
                 removeClass(menuLinkListParent, 'active');  // Xóa class active của menuLink
@@ -112,57 +117,58 @@ function selectMenuItem() {
                 changeUrlAndRouting(pathName);
                 return false;
             }
-            // Ngược lại chọn submenu và active submenu đấy
-            else {
-                activeSubmenu();
-            }
         });
     });
-
-    // Xóa 'className' ở phần tử đầu tiên trong 'listElement' có class là 'className'
-    function removeClass(listElement, className) {
-        listElement.each((index, value) => {
-            if ($(value).hasClass(className)) {
-                $(value).removeClass(className);
-                return false;   // Thoát vòng lặp for each
-            }
-        });
-    }
-
-    // Active các menu và submenu được chọn
-    function activeSubmenu() {
-        submenuLinkList.each((index, value) => {
-            $(value).click(() => {
-                removeClass(menuLinkListParent, 'active');  // Xóa class active của menuLink
-                removeClass(submenuLinkList, 'active');     // Xóa class active của submenuLink
-
-                const submenuLink = $(value);
-                const menuLink = submenuLink.parent().parent().prev();
-
-                menuLink.parent().addClass('active');       // Thêm class active cho menuLink
-                submenuLink.addClass('active');             // Thêm class active cho submenuLink
-
-                // Thay đổi nội dung ở thanh navbar
-                $('.nav-address ul').html(`
-                    <li><a href="#">Trang chủ</a></li>
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    <li><a href="">${menuLink.text()}</a></li>
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    <li><a href="">${submenuLink.text()}</a></li>
-                `);
-
-                const pathName = submenuLink.attr('data-link');
-                changeUrlAndRouting(pathName);
-                return false;
-            });
-        });
-    }
 }
 
-export default async function sideBar_Fn() {
-    await start();
+// Xóa 'className' ở phần tử đầu tiên trong 'listElement' có class là 'className'
+function removeClass(listElement, className) {
+    listElement.each((index, value) => {
+        if ($(value).hasClass(className)) {
+            $(value).removeClass(className);
+            return false;   // Thoát vòng lặp for each
+        }
+    });
+}
+
+// Active các menu và submenu được chọn
+function selectSubMenuItem() {
+    const menuLinkListParent = $('.menu-link').parent();
+    const submenuLinkList = $('.submenu-link');
+
+    submenuLinkList.each((index, value) => {
+        $(value).click(() => {
+            $('.btn-new-info').off('click');            // Xóa sự kiện click của nút thêm từ lần chọn menu sidebar trước
+
+            removeClass(menuLinkListParent, 'active');  // Xóa class active của menuLink
+            removeClass(submenuLinkList, 'active');     // Xóa class active của submenuLink
+
+            const submenuLink = $(value);
+            const menuLink = submenuLink.parent().parent().prev();
+
+            menuLink.parent().addClass('active');       // Thêm class active cho menuLink
+            submenuLink.addClass('active');             // Thêm class active cho submenuLink
+
+            // Thay đổi nội dung ở thanh navbar
+            $('.nav-address ul').html(`
+                <li><a href="#">Trang chủ</a></li>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <li><a href="">${menuLink.text()}</a></li>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <li><a href="">${submenuLink.text()}</a></li>
+            `);
+
+            const pathName = submenuLink.attr('data-link');
+            changeUrlAndRouting(pathName);
+            return false;
+        });
+    });
+}
+
+export default async function sideBar_Fn(param) {
+    await start(param);
     selectMenuItem();
-    console.timeEnd('test')
+    selectSubMenuItem();
 
     $('.fa-bars').click(() => {
         $('.sidebar').toggle();

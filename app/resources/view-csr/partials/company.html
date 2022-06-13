@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="/img/fit-utehy-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"> -->
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/app.css">
+
+</head>
+
+<body class="container-internship">
+  <!-- Loading screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="spinner__container">
+      <img src="/img/loading.svg" />
+      <div class="spinner"></div>
+    </div>
+    <p>Loading your dashboard...</p>
+  </div>
+  <!-- ./loading screen -->
+
+  <div class="header include-html" data-file="partials/header.html"></div>
+  <div class="sidebar-with-content">
+    <div class="sidebar pt-2 include-html" data-file="partials/sidebar.html"></div>
+    <div class="container">
+      <!-- Slide show -->
+      <!-- <div id="slide-show" class="include-html" data-file="partials/slide-show.html"></div> -->
+      <!-- ./slide show -->
+
+      <!-- Feature-jobs -->
+      <!-- <div id="box-feature-jobs">
+        <div class="box-header">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <h2 class="heading text-uppercase">Tin tuyển dụng, việc làm tốt nhất</h2>
+        </div>
+        <div class="feature-jobs">
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-jobs-item">
+              <div class="top-infor">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.webp" alt="">
+                <div class="job-company">
+                  <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                  <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                </div>
+              </div>
+              <div class="bot-infor">
+                <div class="salary">Thỏa thuận</div>
+                <div class="address">Hồ Chí Minh</div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div> -->
+      <!-- ./feature-jobs -->
+      <!-- Company -->
+      <!-- <div id="box-companies">
+        <div class="box-header">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <h2 class="heading text-uppercase">Các công ty tuyển dụng hàng đầu</h2>
+        </div>
+        <div class="companies">
+          <div class="col-md-2 col-6">
+            <div class="companies-item">
+              <img src="/img/cong-ty-tnhh-cmc-global.webp" alt="">
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="companies-item">
+              <img src="/img/cong-ty-tnhh-cmc-global.webp" alt="">
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="companies-item">
+              <img src="/img/cong-ty-tnhh-cmc-global.webp" alt="">
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="companies-item">
+              <img src="/img/cong-ty-tnhh-cmc-global.webp" alt="">
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="companies-item">
+              <img src="/img/cong-ty-tnhh-cmc-global.webp" alt="">
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="companies-item">
+              <img src="/img/cong-ty-tnhh-cmc-global.webp" alt="">
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="companies-item">
+              <img src="/img/cong-ty-tnhh-cmc-global.webp" alt="">
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- ./company -->
+
+      <div class="background-white"></div>
+      <div class="client-page navbar">
+        <div class="nav-address">
+          <ul>
+            <li><a href="">Danh sách Công ty</a></li>
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <li><a href="">Thông tin công ty & tin tuyển dụng từ CÔNG TY TNHH W2SOLUTION VIỆT NAM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="company-cover">
+        <div class="company__cover-image">
+          <img src="/img/gxkBY2igBGfGUP3StqDY.webp" alt="">
+        </div>
+        <!-- company-detail-overview -->
+        <div class="company-detail-overview">
+          <!-- company-logo -->
+          <div id="company-logo">
+            <div class="company-image-logo">
+              <img src="https://cdn.topcv.vn/140/company_logos/cong-ty-tnhh-w2solution-viet-nam-5a548e91b846a_rs.jpg"
+                alt="CÔNG TY TNHH W2SOLUTION VIỆT NAM" class="img-responsive">
+            </div>
+          </div>
+          <!-- /.company-logo -->
+          <!-- company-info -->
+          <div class="company-info">
+            <h1 class="company-detail-name text-highlight">CÔNG TY TNHH W2SOLUTION VIỆT NAM</h1>
+            <div class="d-flex">
+              <p class="website">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <a href="http://w2solution.com.vn" target="_blank">http://w2solution.com.vn</a>
+              </p>
+              <p class="company-size">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                25-99 nhân viên
+              </p>
+            </div>
+          </div>
+          <!-- /.company-info -->
+          <div class="box-follow">
+            <a href="https://www.topcv.vn/cong-ty/theo-doi/7304" data-toggle="modal" data-target=".bs-example-modal-lg"
+              class="btn btn-follow">Theo dõi công ty</a>
+          </div>
+
+        </div>
+        <!-- /.company-detail-overview -->
+      </div>
+      <div class="detail">
+        <!-- company-info box-white -->
+        <div class="company-info box-white">
+          <h2 class="title">Giới thiệu công ty</h2>
+          <div class="box-body">
+            <p>Công ty w2Solution Nhật Bản kinh doanh và phát triển web thương mại điện tử (sau đây gọi là Package, EC
+              site). Package của chúng tôi được các công ty hàng đầu như Microsoft, Rakuten, Amuse sử dụng và được các
+              công ty này đánh giá là package hàng đầu Nhật Bản ở tính năng và bảo mật thông tin. Và chúng tôi đang nhắm
+              đến “Xây dựng EC site số 1 thế giới”
+            </p>
+            <p>- Trên cơ sở đó, công ty con ở Việt Nam ra đời. Công ty w2Solution Việt Nam là một công ty mới, được
+              thành lập vào tháng 07 năm 2015, với 100% vốn Nhật Bản. Mục tiêu của w2Solution Việt Nam hướng tới là
+              trung tâm về dịch vụ cung cấp giải pháp thương mại điện tử ở Châu Á. Chúng tôi cùng với công ty w2Solution
+              Nhật Bản không ngừng phát triển và cải tiến sản phẩm thương mại điện tử để mang đến cho khách hàng 1 giải
+              pháp hoàn mỹ. Chúng tôi rất muốn phát triển, mở rộng dịch vụ cung cấp giải pháp nhiều hơn nữa và trong
+              tương lai gần là sẽ triển khai tại thị trường Việt Nam.
+            </p>
+            <p><b>* Lĩnh vực hoạt động
+              </b></p>
+            <p>- Là một thương hiệu hệ thống EC site có tầm ảnh hưởng rộng đối với các lĩnh vực liên quan đến WEB, EC.
+            </p>
+            <p>- w2Commerce là tên gọi Package của công ty chúng tôi và chủ yếu là xây dựng Platform cho hệ thống thương
+              mại điện tử. Đồng thời tất cả đều do chính công ty chúng tôi thực hiện phát triển với kỹ thuật cao. Nhưng
+              chúng tôi không xem mình là doanh nhân thành đạt mà là Partner thành đạt cùng với việc nhận được sự hài
+              lòng từ khách hàng như 1 tập đoàn liên doanh.
+            </p>
+            <p>- Sản phẩm của chúng tôi đã nhận được sự đánh giá cao từ nước ngoài. Đối với thị trường trong nước, chúng
+              tôi luôn giữ sản phẩm của mình ở vị trí số một về chất lượng của các tính năng phát triển.
+            </p>
+            <p><b>* Về thành tích
+              </b></p>
+            <p>- Công ty w2Solution Nhật Bản được thành lập đến năm nay là năm thứ 12 và đang có sức thu hút trong thời
+              kỳ phát triển. Ba năm gần đây chúng tôi đã đạt được 300% sự tăng trưởng doanh thu và nhận được đánh giá
+              cao trong ngành. Cùng với tốc độ tăng trưởng từ nay trở đi, chúng tôi cũng đang nhận được sự chú ý của các
+              doanh nghiệp. Sáu năm liên tiếp được bầu vào top 100 doanh nghiệp xuất sắc nhất.
+            </p>
+            <p>- Vì điểm mạnh của công ty chúng tôi là năng lực kỹ thuật. Chúng tôi đã lấy được Microsoft GOLD CERTIFIED
+              Partner với một tốc độ nhanh là chỉ trong vòng 7 tháng sau khi thành lập.
+            </p>
+            <p>* Suy nghĩ của Giám Đốc tập đoàn
+            </p>
+            <p>- Coi trọng người ưu tú và sự trưởng thành của mỗi cá nhân. Để trở thành vị trí số 1 trên thế giới, mọi
+              người hãy cùng nhau tạo nên thành quả to lớn của mình!
+            </p>
+            <p>- Chúng tôi kỳ vọng vào những nhân viên cùng nhau làm theo tầm nhìn của công ty với ý thức cao về chất
+              lượng , tinh thần teamwork và tinh thần trách nhiệm. Chúng tôi luôn đánh giá cao thành quả đạt được từ sự
+              trưởng thành đó.
+            </p>
+            <p>- Chúng tôi nhắm đến việc tạo ra thành quả cao cả về mặt vật chất lẫn tinh thần nhờ làm việc với người có
+              ý muốn trưởng thành và hướng đến mục tiêu được công nhận là 1 trong 20% thành viên ưu tú thành đạt được
+              chọn tại Việt Nam trong tương lai.
+            </p>
+            <p>- Khác với những Công ty thông thường, chúng tôi muốn trở thành công ty có được sự phát triển và học hỏi
+              được nhiều từ ý thức tình bạn và mỗi cá nhân đặc biệt.
+            </p>
+            <p><b>* Điểm đặc trưng
+              </b></p>
+            <p>- Văn hóa công ty là công bằng, cởi mở với nhiều cơ hội thăng tiến trong nghề nghiệp.
+            </p>
+            <p>- Đã chọn lĩnh vực mà có thể trở thành số 1 thế giới để thành lập công ty, nên những thành viên ban đầu
+              sáng lập công ty là chuyên gia kỹ thuật có khả năng hướng ra thế giới.
+            </p>
+            <p>- Những công ty lớn cần đến 5 năm thì chúng tôi cũng chỉ cần 1, 2 năm để thử thách ở các công việc với sự
+              cộng tác của các đồng nghiệp trong bầu không khí thân thiện và không ai kiềm chế, cản trở sự phát triển
+              của ai, dựa trên văn hóa chấp nhận thất bại và thất bại đó sẽ là bước chuẩn bị cho cơ hội tiếp theo.
+            </p>
+            <p>
+            </p>
+            <p>- Phong cách kinh doanh là coi trọng mối quan hệ của sự trưởng thành mà bạn nổ lực làm việc 1 cách thoải
+              mái.</p>
+          </div>
+        </div>
+        <!-- /.company-info .box-white -->
+
+        <div class="job-listing box-white">
+          <h2 class="title">Tuyển dụng</h2>
+          <div class="box-body">
+            <!-- <div class="job-item  bg-highlight  job-ta result-job-hover" data-job-id="692056" data-job-position="1"
+              data-box="BoxRecruitmentInCompany">
+              <div class="avatar">
+                <a target="_blank"
+                  href="https://www.topcv.vn/viec-lam/thuc-tap-sinh-net-developer-c-asp-net/692056.html?ta_source=JobListInNormalCompany"
+                  class="company-logo">
+                  <img src="https://cdn.topcv.vn/80/company_logos/cong-ty-tnhh-w2solution-viet-nam-5a548e91b846a_rs.jpg"
+                    class="w-100" alt="CÔNG TY TNHH W2SOLUTION VIỆT NAM"
+                    title="Thực Tập Sinh .Net Developer (C#, Asp.Net)">
+                </a>
+              </div>
+              <div class="body">
+                <div class="content">
+                  <div class="mr-auto">
+                    <h3 class="title">
+                      <a target="_blank" class="underline-box-job"
+                        href="https://www.topcv.vn/viec-lam/thuc-tap-sinh-net-developer-c-asp-net/692056.html?ta_source=JobListInNormalCompany">
+                        <span class="bold transform-job-title" data-toggle="tooltip" title="" data-placement="top"
+                          data-container="body" data-original-title="Thực Tập Sinh .Net Developer (C#, Asp.Net)">Thực
+                          Tập Sinh .Net Developer (C#, Asp.Net)</span>
+                        <span class="icon-verified-employer level-four"><i class="fa-solid fa-circle-check"
+                            data-toggle="tooltip" data-html="true" title="" data-placement="top" data-original-title="
+  <b>Nhà tuyển dụng</b><span> đã được xác thực:</span><br>
+  <span><i class='fa-solid fa-circle-check color-green'></i> Đã xác thực email tên miền công ty</span><br>
+  <span><i class='fa-solid fa-circle-check color-green'></i> Đã xác thực số điện thoại</span><br>
+  <span><i class='fa-solid fa-circle-check color-green'></i> Đã được duyệt Giấy phép kinh doanh</span><br>"></i></span>
+                      </a>
+                    </h3>
+                    <p class="company underline-box-job">
+                      <a href="https://www.topcv.vn/cong-ty/cong-ty-tnhh-w2solution-viet-nam/7304.html"
+                        data-toggle="tooltip" title="" data-placement="top" data-container="body" target="_blank"
+                        data-original-title="CÔNG TY TNHH W2SOLUTION VIỆT NAM">CÔNG TY TNHH W2SOLUTION VIỆT NAM</a>
+                    </p>
+                  </div>
+                  <div class="ml-auto text-right">
+                    <p class="deadline">
+                      Còn <strong>20</strong> ngày để ứng tuyển
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="label-content mr-auto">
+                    <label class="salary">Thoả thuận</label>
+                    <label class="address" data-toggle="tooltip" data-html="true" title="" data-placement="top"
+                      data-container="body" data-original-title="<p style='text-align: left'>Hồ Chí Minh: Quận 3</p>">Hồ
+                      Chí Minh</label>
+                    <label class="time">9 giờ trước</label>
+                  </div>
+                  <div class="icon ml-auto">
+                    <div id="box-save-job-692056" class="box-save-job  box-save-job-hover   job-notsave "
+                      style="width: 23px">
+                      <a href="javascript:void(0)" class="btn-save save" data-id="692056"
+                        data-title="Thực Tập Sinh .Net Developer (C#, Asp.Net)">
+                        <span id="save-job-loading" style="display: none;">
+                          <img src="https://www.topcv.vn/v3/images/ap-loading.gif" style="width: 20px">
+                        </span>
+                        <i class="fa-light fa-heart"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="btn-unsave unsave text-highlight" data-toggle="tooltip"
+                        title="" data-id="692056" data-title="Thực Tập Sinh .Net Developer (C#, Asp.Net)"
+                        data-placement="top" data-container="body" data-original-title="Bỏ lưu">
+                        <span id="unsave-job-loading" style="display: none;">
+                          <img src="https://www.topcv.vn/v3/images/ap-loading.gif" style="width: 20px">
+                        </span>
+                        <i class="fa-solid fa-heart"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-md-12">
+              <div class="feature-jobs-item">
+              <div class="left-infor avatar">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.jpg" alt="">
+              </div>
+              <div class="right-infor">
+                <div class="top-infor">
+                  <div class="mr-auto job-company">
+                    <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                    <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                  </div>
+                  <div class="ml-auto deadline">
+                    Còn <strong>19</strong> ngày để ứng tuyển
+                  </div>
+                </div>
+                <div class="bot-infor d-flex flex-row">
+                  <div class="label mr-auto d-flex flex-row ">
+                    <div class="salary">Thỏa thuận</div>
+                    <div class="address">Hồ Chí Minh</div>
+                    <div class="time">9 giờ trước</div>
+                  </div>
+                  <a class="icon-heart ml-auto">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
+            
+            <div class="col-md-12">
+              <div class="feature-jobs-item">
+              <div class="left-infor avatar">
+                <img src="/img/cong-ty-tnhh-w2solution-viet-nam.jpg" alt="">
+              </div>
+              <div class="right-infor">
+                <div class="top-infor">
+                  <div class="mr-auto job-company">
+                    <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                    <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                  </div>
+                  <div class="ml-auto deadline">
+                    Còn <strong>19</strong> ngày để ứng tuyển
+                  </div>
+                </div>
+                <div class="bot-infor d-flex flex-row">
+                  <div class="label mr-auto d-flex flex-row ">
+                    <div class="salary">Thỏa thuận</div>
+                    <div class="address">Hồ Chí Minh</div>
+                    <div class="time">9 giờ trước</div>
+                  </div>
+                  <div class="icon-heart ml-auto">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.detail -->
+  </div>
+  </div>
+
+  <!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        This is body of large modal
+      </div>
+    </div>
+  </div> -->
+
+  <div class="footer include-html" data-file="partials/footer.html"></div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  <script type="module" src="/js/company.js"></script>
+</body>
+
+</html>

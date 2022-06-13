@@ -1,9 +1,46 @@
+import router from './router/sidebar.route.js';
+
+function submitLogin() {
+    const originUrl = window.location.origin;
+    const postApiLogin = originUrl + '/api' + '/login';
+    const homeUrl = originUrl + '/home';
+
+    $('.form-login__button').click(function () {
+        $('.form-login').submit((e) => {
+            e.preventDefault();
+            return false;
+        })
+
+        $.ajax({
+            url: postApiLogin,
+            type: 'post',
+            dataType: 'json',
+            data: $('.form-login').serialize(),
+            success: function (data) {
+                if (data.check_login == 1) {
+                    const encrypted = CryptoJS.AES.encrypt(
+                        JSON.stringify({
+                            full_name: data.full_name,
+                            account: data.account,
+                            avatar: data.avatar
+                        }), "SecretAdvmln"
+                    );
+                    localStorage.setItem('account', encrypted);
+                    if (data.account == '10120620')                 // nmd
+                        window.location.href = originUrl + '/nmd';  // nmd
+                    else window.location.href = homeUrl;
+                }
+                else {
+                    alert('login fail')
+                }
+            }
+        });
+    });
+}
+
 function showPassword() {
     const iconShow = $('.fa-eye');
     const inputPassword = $('input[type=password]');
-    const originUrl = window.location.origin;
-    var postApiLogin = originUrl + '/api' + '/login';
-    var homeUrl = originUrl + '/home';
 
     iconShow.click(() => {
         if (iconShow.hasClass('fa-eye')) {
@@ -17,43 +54,11 @@ function showPassword() {
             inputPassword.attr('type', 'password');
         }
     });
-
-    $('.form-login__button').click(function () {
-        console.log('da submit')
-        // $.post('http://localhost:1202/api/login', $('.form-login').serialize(), function(data) {
-        //      // ... do something with response from server
-        //      console.log(data);
-        //    },
-        //    'json' // I expect a JSON response
-        // );
-        // window.location.href = 'http://localhost:1202/home';
-
-        $('.form-login').submit((e) => {
-            e.preventDefault();
-            return true;
-        })
-
-        $.ajax({
-            url: postApiLogin,
-            type: 'post',
-            dataType: 'json',
-            data: $('.form-login').serialize(),
-            success: function (data) {
-                console.log(data);
-                console.log(data.check_login);
-                if (data.check_login == 1) {
-                    window.location.href = homeUrl;
-                }
-                else {
-                    console.log('false')
-                }
-            }
-        });
-    });
 }
 
-export default () => {
-    $(document).ready(() => {
-        showPassword();
-    });
+function loginFn() {
+    showPassword();
+    submitLogin();
 }
+
+export default loginFn();

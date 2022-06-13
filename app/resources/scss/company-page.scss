@@ -1,0 +1,172 @@
+@import './utilities/mixin';
+@import 'variables';
+// @import 'box-jobs';
+
+.company {
+    &-cover {
+        margin-bottom: 2rem;
+    }
+
+    &__cover-image {
+        height: 23.6rem;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: inherit;
+        }
+    }
+
+    &-detail-overview {
+        align-items: center;
+        background: #fff;
+        display: flex;
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+        position: relative;
+
+        #company-logo {
+            height: 11rem;
+            margin-right: 2.4rem;
+            width: 14rem;
+
+            .company-image-logo {
+                width: 14rem;
+                height: 14rem;
+                background: #fff;
+                border: 5px solid #fff;
+                display: flex;
+                @include center();
+                border-radius: 1rem;
+                position: relative;
+                top: -6.5rem;
+
+                img {
+                    border: 1px solid #eee;
+                    border-radius: 1rem;
+                    height: 100%;
+                    max-width: 100%;
+                    -o-object-fit: contain;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .company-info {
+            padding-top: 0.5rem;
+            word-break: break-word;
+
+            .company-detail-name {
+                color: $text-color;
+                font-size: 2.4rem;
+                margin-top: 0;
+            }
+
+            .website,
+            .company-size {
+                font-size: 1.5rem;
+                padding-right: 4rem;
+
+                i {
+                    padding-right: 0.5rem;
+                }
+            }
+
+            .website {
+                a {
+                    color: $text-color;
+                }
+            }
+
+            .company-size {
+                white-space: nowrap;
+            }
+        }
+
+        .box-follow {
+            margin-left: auto;
+        }
+    }
+}
+
+.detail {
+    .box-white {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: $radius-default;
+        box-shadow: -1px 1px 6px rgba(0, 0, 0, .05);
+        margin-bottom: 1.6rem;
+        padding: 2.4rem;
+
+        .title {
+            border-left: 5px solid #00b14f;
+            padding-left: 0.8rem;
+        }
+
+        .box-body {
+            padding-top: 1.9rem;
+        }
+    }
+
+    .company-info {
+        &.box-white {
+            padding-top: 2.4rem;
+        }
+    }
+}
+
+// .job-item {
+//     background: #fff 0 0 no-repeat padding-box;
+//     border: 1px solid #f4f4f4;
+//     border-radius: $radius-default;
+//     display: flex;
+//     margin: auto auto 1.6rem;
+//     padding: 1.6rem;
+
+//     .bg-highlight {
+//         background-color: #f2fbf6;
+//     }
+
+//     .avatar {
+//         height: 80px;
+//         overflow: hidden;
+//         width: 80px;
+//         display: flex;
+//         @include center();
+//     }
+
+//     .body {
+//         display: flex;
+//         flex-direction: column;
+//         margin-left: 1.2rem;
+//         width: 100%;
+
+//         .content {
+//             display: flex;
+//             width: 100%;
+
+//             .title {
+//                 line-height: 1;
+//                 margin-bottom: 0;
+//                 margin-top: 0;
+
+//                 a {
+//                     color: #212f3f;
+//                     font-size: 1.6rem;
+//                     margin-bottom: 0.6rem;
+//                     text-decoration: none;
+//                     vertical-align: top;
+//                 }
+//             }
+
+//             .company a {
+//                 color: #555;
+//                 font-size: 1.3rem;
+//                 margin-bottom: 2rem;
+//                 text-decoration: none;
+//                 text-transform: uppercase;
+//             }
+//         }
+//     }
+// }

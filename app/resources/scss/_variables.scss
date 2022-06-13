@@ -4,16 +4,24 @@ $header-heigh: 66px;
 $user-menu-width: 23rem;
 $min-width-sidebar: 250px;
 
+$img-job-width: 4.4rem;
+
 // COLOR
 $text-color: #292929;
 
 $loading-screen-background: #1C1C1C;
 $loading-screen-color: #ffffff;
 
+$green: #00b14f;
+$header-background--hover: rgba(125, 125, 125, .075);
+// $header-color--hover: #098940;
+$header-color--hover: $green;
+// $header-color--hover: #034EA2;
+
 $sidebar-background--dark: #343a40;
 $sidebar-color: #c2c7d0;
 $sidebar-menu-background--active: #007bff;
-$sidebar-menu-color--active: #fff;
+$sidebar-menu-color--active: #ffffff;
 $sidebar-submenu-background--active: rgba(255, 255, 255, .9);
 $sidebar-submenu-color--active: #343a40;
 $sidebar--hover: rgba(255, 255, 255, .1);
@@ -47,6 +55,15 @@ $btn-background--warning: #ffc107;
 $btn-background--info: #17a2b8;
 $btn-background--light: #f8f9fa;
 $btn-background--dark: #343a40;
+
+$container-internship-background: #F0F0F0;
+$box-jobs-background: #ffffff;
+$job-title-color: $text-color;
+$company-job-box: #999999;
+$salary-tag-background-color: rgba(#efefef, .8);
+$address-tag-background-color: rgba(#efefef, .8);
+$tag-background-color: rgba(#efefef, .8);
+$tag-color: rgba(#212f3F, .8);
 
 // FONT
 $font-family: 'Montserrat', Arial, Helvetica, sans-serif;

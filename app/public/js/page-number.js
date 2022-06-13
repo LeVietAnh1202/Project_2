@@ -1,12 +1,13 @@
-let pageActive = $('.page-number li:nth-child(2)');
-const pageNumberLast = $('.page-number li:nth-last-child(2)').text();
-let pageNumberSelected;
-const pageList = $('.page-number li:not(:first-child, :last-child)');
-const previous = $('.page-number li:first-child');
-const next = $('.page-number li:last-child');
+// let pageActive = $('.page-number li:nth-child(2)');
+// const pageNumberLast = $('.page-number li:nth-last-child(2)').text();
+// let pageNumberSelected;
+// const pageList = $('.page-number li:not(:first-child, :last-child)');
+// const previous = $('.page-number li:first-child');
+// const next = $('.page-number li:last-child');
+
+let pageActive, pageNumberLast, pageNumberSelected, pageList, previous, next;
 
 function selectPageNumber() {
-
     // Chọn trang muốn hiển thị
     pageList.click((e) => {
         pageNumberSelected = $(e.target);   // Thẻ li của trang được chọn
@@ -18,7 +19,7 @@ function selectPageNumber() {
         pageNumberSelected = pageActive.prev();
         changePageNumber();
     });
-    
+
     // Bấm nút next để chọn trang tiếp theo
     next.click(() => {
         pageNumberSelected = pageActive.next();
@@ -63,6 +64,12 @@ function changePageNumber() {
     checkNext();
 }
 
-export default function table() {
+export default function pageNumber() {
+    pageActive = $('.page-number li:nth-child(2)');
+    pageNumberLast = $('.page-number li:nth-last-child(2)').text();
+    pageList = $('.page-number li:not(:first-child, :last-child)');
+    previous = $('.page-number li:first-child');
+    next = $('.page-number li:last-child');
+
     selectPageNumber();
 }

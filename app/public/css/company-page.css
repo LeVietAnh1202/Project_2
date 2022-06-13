@@ -1,0 +1,76 @@
+.company-cover {
+  margin-bottom: 2rem; }
+
+.company__cover-image {
+  height: 23.6rem;
+  overflow: hidden; }
+  .company__cover-image img {
+    width: 100%;
+    object-fit: cover;
+    height: inherit; }
+
+.company-detail-overview {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  position: relative; }
+  .company-detail-overview #company-logo {
+    height: 11rem;
+    margin-right: 2.4rem;
+    width: 14rem; }
+    .company-detail-overview #company-logo .company-image-logo {
+      width: 14rem;
+      height: 14rem;
+      background: #fff;
+      border: 5px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+      position: relative;
+      top: -6.5rem; }
+      .company-detail-overview #company-logo .company-image-logo img {
+        border: 1px solid #eee;
+        border-radius: 1rem;
+        height: 100%;
+        max-width: 100%;
+        -o-object-fit: contain;
+        object-fit: contain; }
+  .company-detail-overview .company-info {
+    padding-top: 0.5rem;
+    word-break: break-word; }
+    .company-detail-overview .company-info .company-detail-name {
+      color: #292929;
+      font-size: 2.4rem;
+      margin-top: 0; }
+    .company-detail-overview .company-info .website,
+    .company-detail-overview .company-info .company-size {
+      font-size: 1.5rem;
+      padding-right: 4rem; }
+      .company-detail-overview .company-info .website i,
+      .company-detail-overview .company-info .company-size i {
+        padding-right: 0.5rem; }
+    .company-detail-overview .company-info .website a {
+      color: #292929; }
+    .company-detail-overview .company-info .company-size {
+      white-space: nowrap; }
+  .company-detail-overview .box-follow {
+    margin-left: auto; }
+
+.detail .box-white {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.6rem;
+  padding: 2.4rem; }
+  .detail .box-white .title {
+    border-left: 5px solid #00b14f;
+    padding-left: 0.8rem; }
+  .detail .box-white .box-body {
+    padding-top: 1.9rem; }
+
+.detail .company-info.box-white {
+  padding-top: 2.4rem; }

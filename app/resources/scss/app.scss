@@ -12,6 +12,10 @@
 @import 'search-box';
 @import 'table';
 @import 'float-form';
+@import 'footer';
+
+@import 'sign-up-internship';
+@import 'company-page';
 
 * {
     margin: 0;
@@ -23,10 +27,11 @@
 html {
     font-size: 10px;    
     line-height: 1.15;
-    font-family: $font-family;
+    font-family: $font-family !important;
 }   
-            
+
 body, table {
+    // font-family: $font-family !important;
     color: $text-color !important;
     font-size: 1.4rem !important;
 }

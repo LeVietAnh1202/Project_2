@@ -19,4 +19,13 @@
     &-exit {
         @include btn-custom($btn-color--secondary, $btn-background--secondary);
     }
+
+    &-follow, &-unfollow {
+        @include btn-custom($btn-color--success, $btn-background--success);
+        padding: 1rem 3.5rem !important;
+
+        &:hover {
+            @include btn-custom($btn-color--success, rgba($btn-background--success, .9));
+        }
+    }
 }

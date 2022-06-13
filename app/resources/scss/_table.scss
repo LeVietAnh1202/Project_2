@@ -1,5 +1,4 @@
 .table-db {
-    // margin: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 
     .table {
@@ -8,8 +7,14 @@
 
     table {
         min-width: 50vw;
-        thead tr {
-            background-color: rgba(#707070, .1);
+        thead {
+            tr {
+                background-color: rgba(#707070, .1);
+            }
+
+            th {
+                vertical-align: top !important;
+            }
         }
 
         thead tr th:first-child,
@@ -19,6 +24,21 @@
         tbody tr td:nth-last-child(2) {
             text-align: center;
         }
+
+        tbody td.img-avatar {
+            padding: 0.357rem;
+            // height: 100%;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            // justify-content: center;
+            text-align: center;
+            vertical-align: middle !important;
+            .user-avatar {
+                @include avatar--round(2.8rem);
+            }
+        }
+
     }
 
 

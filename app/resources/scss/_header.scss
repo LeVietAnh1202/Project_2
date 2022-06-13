@@ -27,7 +27,8 @@
         display: none;
         padding: 10px;
         margin-left: 1.5rem;
-        background-color: #707070;
+        background-color: rgba($color: $green, $alpha: .1);
+        color: $green;
         border-radius: $radius-default;
     }
 
@@ -47,6 +48,33 @@
         }
     }
 
+    &__body {
+        display: flex;
+        @include center();
+
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            
+            li {
+                padding: 1.3rem 1rem;
+                margin: 0 0.5rem;
+                font-weight: 700;
+
+                &:hover {
+                    background-color: $header-background--hover;
+                    color: $header-color--hover;
+                    border-radius: $radius-default;
+                }
+
+                &.active {
+                    color: $header-color--hover;
+                }
+            }
+        }
+    }
+
     &__actions {
         display: flex;
         justify-content: flex-end;
@@ -55,20 +83,19 @@
         .fa-bell {
             color: #707070;
             font-size: 1.8rem;
-            padding: 8px;
+            padding: 0.8rem;
             cursor: pointer;
         }
 
         .header__avatar {
-            @include avatar--round(28px);
-            margin-left: 12px;
+            @include avatar--round(2.8rem);
+            margin-left: 1.2rem;
             cursor: pointer;
         }
 
-        .user-menu {
+        .user-menu, .notifications {
             z-index: 400;
             position: absolute;
-            inset: 0px 0px auto auto;
             margin: 0px;
             // transform: translate3d(-28px, 56.8px, 0px);
             transform: translate(-28px, 56.8px);
@@ -88,6 +115,20 @@
                 list-style-type: none;
                 min-width: $user-menu-width;
                 padding: 0.8rem 2.4rem !important;
+            }
+        }
+
+        .user-menu {
+            inset: 0 0 auto auto;
+        }
+
+        .notifications {
+            inset: 0 4rem auto auto;
+        }
+
+        .user-menu {
+
+            &__wrapper {
 
                 hr {
                     border: none;
@@ -153,8 +194,14 @@
             display: none;
         }
 
+        &__body {
+            // display: none;
+            visibility: hidden;
+        }
+
         .fa-bars {
             display: block;
         }
+        
     }
 }
