@@ -5,14 +5,13 @@ import sideBar_Fn from "./sidebar.js";
 import follow from "./util/follow.js";
 import clickHeart from "./util/click-heart.js";
 
-function signUpInternship() {
+function company() {
     includeHTML(function () {
         header();
-        const job = $('.header__body').find('li');
-
+        const headerBody = $('.header__body');
         // Active option Công ty
-        job.removeClass('active');
-        job.next().next().addClass('active');
+        headerBody.find('.active').removeClass('active');
+        headerBody.find('.company').addClass('active');
         sideBar_Fn('?page_name=Internship student');
         
         $('.sidebar').hide();
@@ -20,9 +19,10 @@ function signUpInternship() {
         loadingScreen();
 
         $('.header__title').remove();
+        $('.header__logo a').attr('href', '/job');
         follow();
         clickHeart();
     });
 }
 
-signUpInternship();
+company();

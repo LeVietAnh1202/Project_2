@@ -47,13 +47,32 @@ async function getApi(api, callback) {
         .then(callback);
 }
 
+function customizeSideBar() {
+    let indexActive = 0;
+    switch (window.location.pathname) {
+        case '/job':
+            indexActive = 0;
+            break;
+        case '/profile':
+            indexActive = 1;
+            break;
+        case '/company':
+            indexActive = 2;
+            break;
+        case '/recruitment':
+            indexActive = 0;
+            break;
+    }
+    return indexActive;
+}
+
 // Tạo và hiển thị sidebar
 function sideBar_render(sideBar_arr) {
     const sideBar = $('.sidebar');
     let sideBar_html = '<ul>';
 
     sideBar_arr.map((menu_db, menu_i) => {
-        sideBar_html += menu_i == 0 ? '<li class="active">' : '<li>';
+        sideBar_html += menu_i == customizeSideBar() ? '<li class="active">' : '<li>';
         let submenu_arr = menu_db.submenu_arr;
         
         if ($.isEmptyObject(submenu_arr[0])) {
@@ -108,7 +127,7 @@ function selectMenuItem() {
 
                 // Thay đổi nội dung ở thanh navbar
                 $('.nav-address ul').html(`
-                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="/home">Trang chủ</a></li>
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                     <li><a href="">${menuLink.text()}</a></li>
                 `);
@@ -151,7 +170,7 @@ function selectSubMenuItem() {
 
             // Thay đổi nội dung ở thanh navbar
             $('.nav-address ul').html(`
-                <li><a href="#">Trang chủ</a></li>
+                <li><a href="/home">Trang chủ</a></li>
                 <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 <li><a href="">${menuLink.text()}</a></li>
                 <i class="fa fa-chevron-right" aria-hidden="true"></i>

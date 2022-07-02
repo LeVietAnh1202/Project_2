@@ -1,28 +1,26 @@
-.company-cover {
+.profile-cover {
   margin-bottom: 2rem; }
 
-.company__cover-image {
+.profile__cover-image {
   height: 23.6rem;
   overflow: hidden; }
-  .company__cover-image img {
+  .profile__cover-image img {
     width: 100%;
     object-fit: cover;
     height: inherit; }
 
-.company-detail-overview {
+.profile-detail-overview {
   align-items: center;
   background: #fff;
   display: flex;
   padding-left: 2.4rem;
   padding-right: 2.4rem;
   position: relative; }
-  .company-detail-overview #company-logo {
+  .profile-detail-overview #profile-logo {
     height: 11rem;
-    margin-right: 2.4rem;
-    width: 14rem; }
-    .company-detail-overview #company-logo .company-image-logo {
-      width: 14rem;
-      height: 14rem;
+    margin-right: 2.4rem; }
+    .profile-detail-overview #profile-logo .profile-image-logo,
+    .profile-detail-overview #profile-logo .company-image-logo {
       background: #fff;
       border: 5px solid #fff;
       display: flex;
@@ -31,46 +29,136 @@
       border-radius: 1rem;
       position: relative;
       top: -6.5rem; }
-      .company-detail-overview #company-logo .company-image-logo img {
+      .profile-detail-overview #profile-logo .profile-image-logo img,
+      .profile-detail-overview #profile-logo .company-image-logo img {
         border: 1px solid #eee;
         border-radius: 1rem;
         height: 100%;
         max-width: 100%;
         -o-object-fit: contain;
         object-fit: contain; }
-  .company-detail-overview .company-info {
+    .profile-detail-overview #profile-logo .company-image-logo {
+      border-radius: 1rem;
+      width: 14rem;
+      height: 14rem; }
+      .profile-detail-overview #profile-logo .company-image-logo img {
+        border-radius: 1rem; }
+    .profile-detail-overview #profile-logo .profile-image-logo {
+      border-radius: 50%;
+      width: 16rem;
+      height: 16rem; }
+      .profile-detail-overview #profile-logo .profile-image-logo img {
+        border-radius: 50%;
+        border: 0.05rem solid rgba(0, 0, 0, 0.2); }
+  .profile-detail-overview .profile-info {
     padding-top: 0.5rem;
     word-break: break-word; }
-    .company-detail-overview .company-info .company-detail-name {
+    .profile-detail-overview .profile-info-more {
+      display: flex; }
+    .profile-detail-overview .profile-info .profile-detail-name {
       color: #292929;
       font-size: 2.4rem;
       margin-top: 0; }
-    .company-detail-overview .company-info .website,
-    .company-detail-overview .company-info .company-size {
+    .profile-detail-overview .profile-info .website,
+    .profile-detail-overview .profile-info .company-size {
       font-size: 1.5rem;
       padding-right: 4rem; }
-      .company-detail-overview .company-info .website i,
-      .company-detail-overview .company-info .company-size i {
+      .profile-detail-overview .profile-info .website i,
+      .profile-detail-overview .profile-info .company-size i {
         padding-right: 0.5rem; }
-    .company-detail-overview .company-info .website a {
+    .profile-detail-overview .profile-info .website a {
       color: #292929; }
-    .company-detail-overview .company-info .company-size {
+    .profile-detail-overview .profile-info .company-size {
       white-space: nowrap; }
-  .company-detail-overview .box-follow {
+  .profile-detail-overview .box-follow {
     margin-left: auto; }
 
-.detail .box-white {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 0.5rem;
-  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 1.6rem;
-  padding: 2.4rem; }
-  .detail .box-white .title {
-    border-left: 5px solid #00b14f;
-    padding-left: 0.8rem; }
-  .detail .box-white .box-body {
-    padding-top: 1.9rem; }
+.profile-detail {
+  display: flex; }
+  .profile-detail p {
+    margin-bottom: 0.5rem; }
+  .profile-detail--left {
+    flex: 1;
+    margin-right: 2rem; }
+  .profile-detail--right {
+    flex: 2; }
+  .profile-detail .more-info {
+    color: #999; }
+  .profile-detail .contact div {
+    margin-bottom: 0.5rem; }
+  .profile-detail .contact i {
+    width: 2rem; }
+  .profile-detail .contact a {
+    color: #292929; }
+  .profile-detail .skill div {
+    margin-bottom: 1.5rem; }
+  .profile-detail .interests ul {
+    margin-left: 2rem; }
+
+.profile-cover-small {
+  width: 32%; }
+  .profile-cover-small .profile__cover-image {
+    height: 15rem; }
+  .profile-cover-small .company-image-logo {
+    width: 6.4rem !important;
+    height: 6.4rem !important;
+    top: -3.2rem !important; }
+  .profile-cover-small #profile-logo {
+    height: 3.8rem; }
+  .profile-cover-small .profile-detail-overview {
+    display: block;
+    padding-bottom: 2.4rem; }
+    .profile-cover-small .profile-detail-overview h4 {
+      margin-bottom: 1.5rem;
+      color: #292929; }
+    .profile-cover-small .profile-detail-overview p {
+      margin-bottom: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 2.5rem;
+      line-clamp: 3;
+      -webkit-line-clamp: 5;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      text-align: justify; }
+
+@media only screen and (max-width: 768px) {
+  .profile-detail-overview {
+    display: block; }
+    .profile-detail-overview #profile-logo,
+    .profile-detail-overview .profile-info .profile-detail-name,
+    .profile-detail-overview #profile-logo .company-image-logo,
+    .profile-detail-overview #profile-logo .profile-image-logo {
+      margin-left: auto;
+      margin-right: auto; }
+    .profile-detail-overview .profile-info-more {
+      display: block; }
+      .profile-detail-overview .profile-info-more .website {
+        margin-top: 1rem; }
+    .profile-detail-overview .profile-info h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+    .profile-detail-overview .profile-info .profile-detail-name,
+    .profile-detail-overview .profile-info div p {
+      text-align: center; }
+    .profile-detail-overview #profile-logo {
+      margin-bottom: -2.5rem; }
+    .profile-detail-overview .box-follow {
+      margin-top: 1rem;
+      padding-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-around; }
+  .profile-detail {
+    display: block; }
+    .profile-detail--left {
+      margin-right: 0; } }
+
+.company-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
 
 .detail .company-info.box-white {
   padding-top: 2.4rem; }

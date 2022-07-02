@@ -2,7 +2,7 @@ const Course = require('../models/Course');
 const { multipleMongooseToObject } = require('../../util/mongoose');
 const db = require('../../config/db/sql');
 const path = require('path');
-const { log } = require('console');
+// const { log } = require('console');
 
 class SiteController {
     // [GET] /
@@ -47,9 +47,33 @@ class SiteController {
     job(req, res, next) {
         res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/sign-up-internship.html'))
     }
+    
+    lecturer(req, res, next) {
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/lecturer.html'))
+    }
+    
+    jobRecruitment(req, res, next) {
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/recruitment.html'))
+    }
 
-    company(req, res, next) {
-        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/company.html'))
+    companyList(req, res, next) {
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/company-list.html'))
+    }
+
+    company_w2solution(req, res, next) {
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/company-w2solution.html'))
+    }
+
+    company_bkav(req, res, next) {
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/company-bkav.html'))
+    }
+
+    profile(req, res, next) {
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/profile.html'))
+    }
+
+    recruitment(req, res, next) {
+        res.sendFile(path.join(__dirname, '../../resources/view-csr/partials/recruitment.html'))
     }
     
     // nmd

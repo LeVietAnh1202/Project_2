@@ -57,7 +57,11 @@
             list-style: none;
             margin: 0;
             
-            li {
+            li.active a {
+                color: $header-color--hover;
+            }
+            a {
+                color: $text-color;
                 padding: 1.3rem 1rem;
                 margin: 0 0.5rem;
                 font-weight: 700;
@@ -68,9 +72,7 @@
                     border-radius: $radius-default;
                 }
 
-                &.active {
-                    color: $header-color--hover;
-                }
+                
             }
         }
     }

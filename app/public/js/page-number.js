@@ -30,7 +30,6 @@ function selectPageNumber() {
 
 // Đổi active sang trang được chọn
 function activePageNumber() {
-    console.assert('1');
     pageActive.removeClass('active');
     pageNumberSelected.addClass('active');
     pageActive = pageNumberSelected;
@@ -64,12 +63,12 @@ function changePageNumber() {
     checkNext();
 }
 
-export default function pageNumber() {
-    pageActive = $('.page-number li:nth-child(2)');
-    pageNumberLast = $('.page-number li:nth-last-child(2)').text();
-    pageList = $('.page-number li:not(:first-child, :last-child)');
-    previous = $('.page-number li:first-child');
-    next = $('.page-number li:last-child');
+export default function pageNumber(number) {
+    pageActive = $(`.page-number-${number} li:nth-child(2)`);
+    pageNumberLast = $(`.page-number-${number} li:nth-last-child(2)`).text();
+    pageList = $(`.page-number-${number} li:not(:first-child, :last-child)`);
+    previous = $(`.page-number-${number} li:first-child`);
+    next = $(`.page-number-${number} li:last-child`);
 
     selectPageNumber();
 }

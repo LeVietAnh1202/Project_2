@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="shortcut icon" href="/img/fit-utehy-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"> -->
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/app.css">
+
+</head>
+
+<body>
+  <!-- Loading screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="spinner__container">
+      <img src="/img/loading.svg" />
+      <div class="spinner"></div>
+    </div>
+    <p>Loading your dashboard...</p>
+  </div>
+  <!-- ./loading screen -->
+
+  <div class="header include-html" data-file="partials/header.html"></div>
+  <div class="sidebar-with-content">
+    <div class="sidebar pt-2 include-html" data-file="partials/sidebar.html"></div>
+    <div class="container">
+      <div class="profile-cover">
+        <div class="profile__cover-image">
+          <img src="/img/DM_20220619014545_001.jpg" alt="">
+        </div>
+        <!-- profile-detail-overview -->
+        <div class="profile-detail-overview">
+          <!-- profile-logo -->
+          <div id="profile-logo">
+            <div class="profile-image-logo">
+              <img src="/img/avatar.jpg" alt="Avatar" class="img-responsive">
+            </div>
+          </div>
+          <!-- /.profile-logo -->
+          <!-- profile-info -->
+          <div class="profile-info">
+            <h1 class="profile-detail-name text-highlight">Lê Việt Anh</h1>
+            <div>
+              <p class="profile-detail-account">@admin</p>
+            </div>
+            <!-- <div class="d-flex">
+              <p class="website">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <a href="http://w2solution.com.vn" target="_blank">http://w2solution.com.vn</a>
+              </p>
+              <p class="company-size">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                25-99 nhân viên
+              </p>
+            </div> -->
+          </div>
+          <!-- /.profile-info -->
+          <!-- <div class="box-follow">
+            <a href="https://www.topcv.vn/cong-ty/theo-doi/7304" data-toggle="modal" data-target=".bs-example-modal-lg"
+              class="btn btn-follow">Theo dõi công ty</a>
+          </div> -->
+  
+        </div>
+        <!-- /.profile-detail-overview -->
+      </div>
+      <div class="profile-detail">
+        <!-- profile-detail--left box-white -->
+        <div class="box-white profile-detail--left">
+          <div class="contact">
+            <h2 class="title">Thông tin liên hệ</h2>
+            <div class="box-body">
+              <div class="birthday">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                <!-- <p>01/01/2002</p> -->
+              </div>
+              <div class="gender">
+                <i class="fa fa-mars" aria-hidden="true"></i>
+                <!-- <p>Nam</p> -->
+              </div>
+              <div class="phone-number">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <!-- <p>0328284479</p> -->
+              </div>
+              <div class="email">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <!-- <p>levietanh1202@gmail.com</p> -->
+              </div>
+              <div class="address">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <!-- <p>Hà Nội, Việt Nam</p> -->
+              </div>
+              <div class="link">
+                <i class="fa fa-link" aria-hidden="true"></i>
+                <a href="" target="_blank"></a>
+              </div>
+            </div>
+          </div>
+          <hr class="mt-4 mb-4">
+  
+          <div class="skill">
+            <h2 class="title">Các kỹ năng</h2>
+            <div class="box-body">
+              <div>
+                <h4>Tin học văn phòng</h4>
+                Sử dụng thành thạo các công cụ Word, Excel, Power Point
+              </div>
+              <div>
+                <h4>Tiếng Anh</h4>
+                Có khả năng giao tiếp Tiếng Anh
+              </div>
+            </div>
+          </div>
+          <hr class="mt-4 mb-4">
+  
+          <div class="interests">
+            <h2 class="title">Sở thích</h2>
+            <div class="box-body">
+              <ul>
+                <li>Đọc sách</li>
+                <li>Nghe nhạc</li>
+                <li>Chơi rubik</li>
+                <li>Du lịch</li>
+                <li>Tìm hiểu công nghệ mới</li>
+              </ul>
+            </div>
+          </div>
+          <hr class="mt-4 mb-4">
+  
+          <div class="award">
+            <h2 class="title">Giải thưởng</h2>
+            <div class="box-body">
+              <h4>Học bổng tài năng</h4>
+              <p>+ Kỳ I năm 2020-2021</p>
+              <p>+ Kỳ II năm 2020-2021</p>
+              <p>+ Kỳ I năm 2021-2022</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.profile-detail--left .box-white -->
+        <!-- profile-detail--right box-white -->
+        <div class="box-white profile-detail--right">
+          <div class="objective">
+            <h2 class="title">Mục tiêu nghề nghiệp</h2>
+            <div class="box-body">
+              <p>
+                Không ngừng học hỏi trao dồi những kiến thức về lập trình để phát triển kỹ năng chuyên môn.
+              </p>
+              <p>
+                Mục tiêu trong 4 năm tới trở thành lập trình viên IoT chuyên nghiệp.
+              </p>
+            </div>
+          </div>
+          <hr class="mt-4 mb-4">
+  
+          <div class="education">
+            <h2 class="title">Học vấn</h2>
+            <div class="box-body">
+              <div class="d-flex">
+                <h4 class="mr-auto">Đại học Sư phạm kỹ thuật Hưng Yên</h4>
+                <div class="time ml-auto">10/2020-Hiện tại</div>
+              </div>
+              Ngành Công nghệ thông tin, Chuyên ngành Phát triển ứng dụng IoT
+            </div>
+          </div>
+          <hr class="mt-4 mb-4">
+  
+          <div class="experience">
+            <h2 class="title">Dự án tham gia</h2>
+            <div class="box-body">
+              <div class="d-flex">
+                <h4 class="mr-auto">Dự án FIT-PORTAL</h4>
+                <div class="time ml-auto">9/2021-2/2022</div>
+              </div>
+              <p>Học tập kiến thức lập trình website.</p>
+              <p>+ Mô hình Microservice.</p>
+              <p>+ Mô hình 3 Layer.</p>
+              <p>+ Lập trình C#, Web API, StoreProcedure.</p>
+              <p>+ Lập trình Angular Framework.</p>
+              <br>
+              <p>Công việc thực tế được tham gia</p>
+              <p>+ Phân tích, thiết kế hệ thống (chức năng, cơ sở dữ liệu, giao diện).</p>
+              <p>+ Viết API cho ứng dụng.</p>
+            </div>
+          </div>
+          <hr class="mt-4 mb-4">
+  
+          <div class="activity">
+            <h2 class="title">Hoạt động</h2>
+            <div class="box-body">
+              <div class="d-flex">
+                <h4 class="mr-auto">Tham gia cuộc thi vui cùng IT 2021</h4>
+                <div class="time ml-auto">4/2021</div>
+              </div>
+              <div class="more-info">Người tham gia</div>
+              Cuộc thi dành cho sinh viên toàn khoa do khoa Công nghệ thông tin tổ chức
+            </div>
+          </div>
+          
+          <hr class="mt-4 mb-4">
+  
+          <div class="certification">
+            <h2 class="title">Chứng chỉ</h2>
+            <div class="box-body">
+              <h4>Chứng chỉ hoàn thành khóa học của Codelearn</h4>
+              <p>+ C# fundamentals.</p>
+              <p>+ Python fundamentals.</p>
+              <p>+ Introduction to SQL.</p>
+              <p>+ Computer hardware.</p>
+              <p>+ C for beginners.</p>
+              <p>+ C++ for beginners.</p>
+              <p>+ C++ advanced.</p>
+              <p>+ Object oriented programming in C++.</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.profile-detail--right .box-white -->
+  
+  
+        <!-- <div class="job-listing box-white">
+          <h2 class="title">Tuyển dụng</h2>
+          <div class="box-body">
+            <div class="col-md-12">
+              <div class="feature-jobs-item bg-highlight">
+                <div class="left-infor avatar">
+                  <img src="/img/cong-ty-tnhh-w2solution-viet-nam.jpg" alt="">
+                </div>
+                <div class="right-infor">
+                  <div class="top-infor">
+                    <div class="mr-auto job-company">
+                      <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                      <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                    </div>
+                    <div class="ml-auto deadline">
+                      Còn <strong>19</strong> ngày để ứng tuyển
+                    </div>
+                  </div>
+                  <div class="bot-infor d-flex flex-row">
+                    <div class="label mr-auto d-flex flex-row ">
+                      <div class="salary">Thỏa thuận</div>
+                      <div class="address">Hồ Chí Minh</div>
+                      <div class="time">9 giờ trước</div>
+                    </div>
+                    <a class="icon-heart ml-auto">
+                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-12">
+              <div class="feature-jobs-item bg-highlight">
+                <div class="left-infor avatar">
+                  <img src="/img/cong-ty-tnhh-w2solution-viet-nam.jpg" alt="">
+                </div>
+                <div class="right-infor">
+                  <div class="top-infor">
+                    <div class="mr-auto job-company">
+                      <div class="job-title">.Net Developers (Mvc, MySQL)</div>
+                      <div class="company">Công Ty TNHH W2SOLUTION Việt Nam</div>
+                    </div>
+                    <div class="ml-auto deadline">
+                      Còn <strong>19</strong> ngày để ứng tuyển
+                    </div>
+                  </div>
+                  <div class="bot-infor d-flex flex-row">
+                    <div class="label mr-auto d-flex flex-row ">
+                      <div class="salary">Thỏa thuận</div>
+                      <div class="address">Hồ Chí Minh</div>
+                      <div class="time">9 giờ trước</div>
+                    </div>
+                    <div class="icon-heart ml-auto">
+                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/util/aes.js"></script>
+  <script type="module" src="/js/profile.js"></script>
+</body>
+
+</html>

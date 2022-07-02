@@ -11,8 +11,6 @@ function updateUserInfor() {
         $('.user-menu__name').html(userAccount.full_name);
         $('.user-menu__user-name').html('@' + userAccount.account);
     };
-
-
 }
 
 function header() {

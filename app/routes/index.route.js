@@ -5,6 +5,7 @@ const siteApiRouter = require('./api/site.api');
 const courseApiRouter = require('./api/course.api');
 const companyApiRouter = require('./api/company.api');
 const studentApiRouter = require('./api/student.api');
+const lecturerApiRouter = require('./api/lecturer.api');
 const testApiRouter = require('./api/test.api');
 
 const siteRouter = require('./site.route');
@@ -68,6 +69,8 @@ function route(app) {
     app.use('/api/test', testApiRouter);
 
     app.use('/api/student', studentApiRouter);
+
+    app.use('/api/lecturer', lecturerApiRouter);
 
     // app.use('/api/news', newsApiRouter);
 

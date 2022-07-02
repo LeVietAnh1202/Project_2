@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="/img/fit-utehy-logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"> -->
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body class="container-internship">
+    <!-- Loading screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="spinner__container">
+            <img src="/img/loading.svg" />
+            <div class="spinner"></div>
+        </div>
+        <p>Loading your dashboard...</p>
+    </div>
+    <!-- ./loading screen -->
+
+    <div class="header include-html" data-file="partials/header.html"></div>
+    <div class="sidebar-with-content" style="min-height: 68vh;">
+        <div class="sidebar pt-2 include-html" data-file="partials/sidebar.html">
+
+        </div>
+        <div class="container">
+            <h1 class="text-uppercase text-center" style="margin: 5rem 0";>Danh sách sinh viên cần hướng dẫn thực tập</h1>
+            <div class="search">
+                <div class="heading">
+                    <p>Tìm kiếm</p>
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </div>
+
+                <!-- <div class="table-db mt-4">
+                    <div class="table-db-2">
+                        <table class="table table-bordered table-hover table-responsive-md">
+
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" name="selectAll-tbl-2" id="selectAll-tbl-2"></th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">StudentID</th>
+                                    <th scope="col">Student name</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Date of birth</th>
+                                    <th scope="col">Home town</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone number</th>
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><input type="checkbox" name="selectRow-tbl-2" id="selectRow-tbl-2"
+                                            data-id="12520088"></th>
+                                    <td>1</td>
+
+                                    <td>12520088</td>
+                                    <td>Lê Việt Anh</td>
+                                    <td>Nam</td>
+                                    <td>2002-01-01</td>
+                                    <td>Phú Xuyên, Hà Nội</td>
+                                    <td>levietanh1202@gmail.com</td>
+                                    <td>0328284479</td>
+
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <div class="page-number page-number-2">
+                            <p>Hiển thị bản ghi từ 1 đến 1 trên tổng số 1</p>
+                            <ul>
+                                <li class="disabled">Previous</li>
+                                <li class="active">1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>Next</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer include-html" data-file="partials/footer.html"></div>
+
+
+    <script src="/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/util/aes.js"></script>
+    <script type="module" src="/js/lecturer.js"></script>
+</body>
+
+</html>

@@ -50,9 +50,26 @@
         }
     }
 
-    .confirm-delete {
+    .confirm-delete, .confirm-apply {
         display: flex;
         align-items: flex-end;
+    }
+
+    .success-notification {
+        text-align: center;
+        .fa-check {
+            font-size: 3rem;
+            color: $green;
+            margin-bottom: 1.5rem;
+            border: 0.3rem solid $green;
+            padding: 0.7rem;
+            border-radius: 50%;
+        }
+    }
+
+    div[name=success-notification] {
+        animation: leaves 0.8s ease-in-out forwards;
+        // -webkit-animation: leaves 5s ease-in-out infinite alternate;
     }
 
     &__button {
@@ -74,5 +91,16 @@
                 margin: 0 1rem;
             }
         }
+    }
+}
+
+@keyframes leaves {
+    0% {
+        transform: scale(0.7);
+        // -webkit-transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1);
+        // -webkit-transform: scale(2.0);
     }
 }

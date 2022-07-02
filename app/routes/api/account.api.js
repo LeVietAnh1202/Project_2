@@ -10,6 +10,14 @@ const accountApiController = require('../../src/controllers/api/AccountApiContro
 
 router.post('/create', accountApiController.create);
 
+router.post('/update', accountApiController.update);
+
+router.get('/delete', accountApiController.delete);
+
+router.get('/get-by-id', accountApiController.getByID);
+
 router.get('/get-all', accountApiController.getAll);
+
+router.post('/search', accountApiController.search);
 
 module.exports = router;

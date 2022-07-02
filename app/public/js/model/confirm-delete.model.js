@@ -1,8 +1,8 @@
 import FloatForm from "./float-form.model.js";
 
 class ConfirmDelete extends FloatForm {
-    constructor(title, content) {
-        super(title, content, 'btn-agree', 'Đồng ý', 'confirm-delete');
+    constructor(title, content, api) {
+        super(title, content, 'btn-agree', 'Đồng ý', 'confirm-delete', api);
         this.confirmClass = 'confirm-delete';
     }
 }

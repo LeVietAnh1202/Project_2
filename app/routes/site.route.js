@@ -9,7 +9,19 @@ router.get('/home', siteController.home);
 
 router.get('/job', siteController.job);
 
-router.get('/company', siteController.company);
+router.get('/lecturer', siteController.lecturer);
+
+router.get('/job/recruitment', siteController.jobRecruitment);
+
+router.get('/company-list', siteController.companyList);
+
+router.get('/company-list/company-w2solution', siteController.company_w2solution);
+
+router.get('/company-list/company-bkav', siteController.company_bkav);
+
+router.get('/profile', siteController.profile);
+
+router.get('/recruitment', siteController.recruitment);
 
 router.get('/nmd', siteController.nmd); // nmd
 

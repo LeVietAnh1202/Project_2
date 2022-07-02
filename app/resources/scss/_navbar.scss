@@ -18,8 +18,15 @@
 .client-page {
     &.navbar {
         left: auto;
-        // width: 100%;
+        width: calc(100% - 3rem);
         padding: 1.5rem 3rem;
+
+        .nav-address ul {
+            // flex-direction: column;
+            // align-items: flex-start;
+            // justify-content: flex-start;
+            flex-wrap: wrap;
+        }
     }
 }
 
@@ -48,6 +55,10 @@
             &:hover {
                 color: $navbar-color--hover;
             }
+
+            overflow: hidden;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
         }
 
         .fa {
@@ -77,7 +88,8 @@
     .client-page {
         &.navbar {
             left: auto;
-            min-width: calc(960px - 15px * 2);
+            min-width: calc(960px - 15px * 2) !important;
+            width: calc(960px - 15px * 2) !important;
             padding: 1.5rem 3rem;
         }
     }
@@ -87,7 +99,23 @@
     .client-page {
         &.navbar {
             left: auto;
-            min-width: calc(1140px - 15px * 2);
+            min-width: calc(1140px - 15px * 2) !important;
+            width: calc(1140px - 15px * 2) !important;
+            padding: 1.5rem 3rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .client-page {
+        &.background-white {
+            display: none;
+        }
+        &.navbar {
+            left: auto;
+            // min-width: calc(1140px - 15px * 2);
+            // width: 30%;
+            display: none;
             padding: 1.5rem 3rem;
         }
     }
