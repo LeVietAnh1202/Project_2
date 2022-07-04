@@ -3,19 +3,35 @@ const sql = require('mssql');
 
 // require("msnodesqlv8");
 var config = {
-    // // // Server local
-    server: "LAPTOP-3QPR9A3B",
-    user: "manager",
-    password: "vietanh123",
-    database: "Project_2",
-    // driver: "msnodesqlv8",
+    // // // // Server local
+    // server: "LAPTOP-3QPR9A3B",
+    // user: "manager",
+    // password: "vietanh123",
+    // database: "Project_2",
+    // // driver: "msnodesqlv8",
+    // parseJSON: true,
+    // options: {
+    //     trustedConnection: true,
+    //     encrypt: true,
+    //     enableArithAbort: true,
+    //     trustServerCertificate: true,
+    //     integratedSecurity: true
+    // }
+
+    // Server on the freeasphosting
+    user: "levietanh1202_classfund",
+    password: "IoTtainangK18",
+    server: "sql.bsite.net\\MSSQL2016",
+    database: "levietanh1202_classfund",
     parseJSON: true,
     options: {
         trustedConnection: true,
         encrypt: true,
         enableArithAbort: true,
         trustServerCertificate: true,
-        integratedSecurity: true
+    },
+    authentication: {
+        // type: "azure-active-directory-password"
     }
 };
 
