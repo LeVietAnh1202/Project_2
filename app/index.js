@@ -17,7 +17,8 @@ const db = require('./config/db/mg');
 // db.connect();
 
 const app = express();
-const port = process.env.port | 1202;
+const port = process.env.PORT || 1202;
+// const port = 1202;
 
 // for parsing application/json
 app.use(bodyParser.json()); 

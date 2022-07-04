@@ -1,14 +1,14 @@
 const http = require('http');
 const sql = require('mssql');
 
-require("msnodesqlv8");
+// require("msnodesqlv8");
 var config = {
     // // // Server local
     server: "LAPTOP-3QPR9A3B",
     user: "manager",
     password: "vietanh123",
     database: "Project_2",
-    driver: "msnodesqlv8",
+    // driver: "msnodesqlv8",
     parseJSON: true,
     options: {
         trustedConnection: true,
