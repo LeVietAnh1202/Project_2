@@ -34,9 +34,6 @@ async function connectionPool() {
 
 module.exports = connectionPool();
 
-
-
-
 // const http = require('http');
 // const sql = require('mssql');
 
