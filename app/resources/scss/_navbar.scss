@@ -1,5 +1,5 @@
-.background-white {
-    height: 46.5px;
+@mixin navbar__background-white ($height) {
+    height: $height;
     background-color: white;
     position: -webkit-sticky;
     position: sticky;
@@ -7,12 +7,33 @@
     z-index: 1;
 }
 
+.cms.background-white {
+    @include navbar__background-white(46.5px);
+}
+
+.background-white {
+    @include navbar__background-white(51px);
+}
+
+.client-page {
+    &.navbar {
+        left: auto;
+        width: calc(100% - 3rem);
+        padding: 1.5rem 3rem;
+
+        .nav-address ul {
+            // flex-direction: column;
+            // align-items: flex-start;
+            // justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+    }
+}
+
 .navbar {
-    // box-shadow: 0 -3px 10px 1px rgba(0, 0, 0, .2);
     box-shadow: 0 -2px 9px rgba(0, 0, 0, 0.4);
     min-width: calc(100% - #{$min-width-sidebar});
     padding: 0.8rem 3rem;
-    // background-color: #fff;
     background: linear-gradient(to right, rgba(40, 119, 250, .6), rgba(103, 23, 205, .6));
     // background: linear-gradient(to right, rgb(131, 173, 253), rgb(160, 130, 233));
     position: fixed;
@@ -34,6 +55,10 @@
             &:hover {
                 color: $navbar-color--hover;
             }
+
+            overflow: hidden;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
         }
 
         .fa {
@@ -56,5 +81,42 @@
         left: 0;
         min-width: 100vw;
         padding: auto 10px !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .client-page {
+        &.navbar {
+            left: auto;
+            min-width: calc(960px - 15px * 2) !important;
+            width: calc(960px - 15px * 2) !important;
+            padding: 1.5rem 3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .client-page {
+        &.navbar {
+            left: auto;
+            min-width: calc(1140px - 15px * 2) !important;
+            width: calc(1140px - 15px * 2) !important;
+            padding: 1.5rem 3rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .client-page {
+        &.background-white {
+            display: none;
+        }
+        &.navbar {
+            left: auto;
+            // min-width: calc(1140px - 15px * 2);
+            // width: 30%;
+            display: none;
+            padding: 1.5rem 3rem;
+        }
     }
 }

@@ -1,1 +1,2 @@
 AFFNW: using Arrow Function the Function doesN't Work
+CMF: create multi form (Form insert dữ liệu bị xuất hiện nhiều lần sau mỗi lần đổi menu sidebar thì số lượng form insert lại tăng lên nhưng form edit và delete lại không bị)

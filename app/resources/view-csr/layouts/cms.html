@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trang quản trị</title>
+    <link rel="shortcut icon" href="/img/fit-utehy-logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,15 +28,15 @@
     </div>
     <!-- ./loading screen -->
 
-    <div class="header include-html" data-file="partials/header.html"></div>
+    <div class="header include-html" data-file="/partials/header.html"></div>
     <div class="sidebar-with-content">
-        <div class="sidebar pt-2 include-html" data-file="partials/sidebar.html"></div>
+        <div class="sidebar pt-2 include-html"></div>
         <div class="main-content">
-            <div class="background-white"></div>
+            <div class="cms background-white"></div>
             <div class="navbar">
                 <div class="nav-address">
                     <ul>
-                        <li><a href="">Trang chủ</a></li>
+                        <li><a href="/home">Trang chủ</a></li>
                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
                         <li><a href="">Thông tin doanh nghiệp</a></li>
                     </ul>
@@ -50,27 +51,27 @@
                     <i class="fa fa-angle-double-up" aria-hidden="true"></i>
                 </div>
 
-                <!-- Search from -->
-                <form class="container pb-4 pt-4">
+                <!-- Search form - company -->
+                <!-- <form name="form-search" class="container pb-4 pt-4">
                     <div class="form-row">
                         <div class="col-md-4 mb-4">
                             <label for="id-doanh-nghiep">Mã viết tắt DN</label>
-                            <input type="text" class="form-control" id="id-doanh-nghiep" value="FPT" required>
+                            <input type="text" name="id-doanh-nghiep" class="form-control" id="id-doanh-nghiep" placeholder="FPT">
                         </div>
                         <div class="col-md-4 mb-4">
                             <label for="ten-doanh-nghiep">Tên doanh nghiệp</label>
                             <input type="text" class="form-control" id="ten-doanh-nghiep"
-                                value="Công ty Cổ phần Viễn thông FPT" required>
+                                placeholder="Công ty Cổ phần Viễn thông FPT">
                         </div>
                         <div class="col-md-4 mb-4">
                             <label for="ngay-thanh-lap">Ngày thành lập</label>
-                            <input type="date" class="form-control" id="ngay-thanh-lap" required>
+                            <input type="date" class="form-control" id="ngay-thanh-lap">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-4 mb-4">
                             <label for="loai-hinh">Loại hình</label>
-                            <input type="text" class="form-control" id="loai-hinh" value="Công ty phần mềm" required>
+                            <input type="text" class="form-control" id="loai-hinh" placeholder="Công ty phần mềm">
                         </div>
                         <div class="col-md-4 mb-4">
                             <label for="website">Website</label>
@@ -79,12 +80,56 @@
                     </div>
 
                     <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-                </form>
+                </form> -->
+                <!-- Search form -->
+                <!-- Search form - account -->
+                <!-- <form name="form-search" class="container pb-4 pt-4">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-4">
+                            <label for="role">Role</label>
+                            <select name="role" class="form-control" id="role">
+                                <option value="1">Admin</option>
+                                <option value="2">Giảng viên</option>
+                                <option value="3">Sinh viên</option>
+                                <option value="4">Cán bộ doanh nghiệp</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="account">Account</label>
+                            <input type="text" name="account" class="form-control" id="account">
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="password">Password</label>
+                            <input type="text" name="password" class="form-control" id="password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-4">
+                            <label for="avatar">Avatar</label>
+                            <input type="text" name="avatar" class="form-control" id="avatar">
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="full-name">Full name</label>
+                            <input type="text" name="full-name" class="form-control" id="full-name">
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="gender">Gender</label>
+                            <select name="gender" class="form-control" id="gender">
+                                <option value="1">Nam</option>
+                                <option value="0">Nữ</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                </form> -->
+                <!-- Search form - account -->
 
             </div>
+            <!-- /.search -->
 
             <!-- Table database -->
-            <div class="table-db mt-4">
+            <!-- <div class="table-db mt-4">
                 <table class="table table-bordered table-hover table-responsive-md">
                     <thead>
                         <tr>
@@ -95,7 +140,7 @@
                             <th scope="col">Ngày thành lập</th>
                             <th scope="col">Loại hình</th>
                             <th scope="col">Website</th>
-                            <th colspan="2">Tác vụ</th>
+                            <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -154,61 +199,6 @@
                             <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
                             <td><i class="fa fa-trash-o" data-id="5" aria-hidden="true"></i></td>
                         </tr>
-                        <!-- <tr>
-                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
-                            <td>6</td>
-                            <td>FPT</td>
-                            <td>Công ty Cổ phần Viễn thông FPT</td>
-                            <td>13/09/1988</td>
-                            <td>Công ty phần mềm</td>
-                            <td>http://fpt.com.vn</td>
-                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
-                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
-                            <td>7</td>
-                            <td>FPT</td>
-                            <td>Công ty Cổ phần Viễn thông FPT</td>
-                            <td>13/09/1988</td>
-                            <td>Công ty phần mềm</td>
-                            <td>http://fpt.com.vn</td>
-                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
-                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
-                            <td>8</td>
-                            <td>FPT</td>
-                            <td>Công ty Cổ phần Viễn thông FPT</td>
-                            <td>13/09/1988</td>
-                            <td>Công ty phần mềm</td>
-                            <td>http://fpt.com.vn</td>
-                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
-                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
-                            <td>9</td>
-                            <td>FPT</td>
-                            <td>Công ty Cổ phần Viễn thông FPT</td>
-                            <td>13/09/1988</td>
-                            <td>Công ty phần mềm</td>
-                            <td>http://fpt.com.vn</td>
-                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
-                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input type="checkbox" name="selectRow" id="selectRow"></th>
-                            <td>10</td>
-                            <td>FPT</td>
-                            <td>Công ty Cổ phần Viễn thông FPT</td>
-                            <td>13/09/1988</td>
-                            <td>Công ty phần mềm</td>
-                            <td>http://fpt.com.vn</td>
-                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
-                            <td><i class="fa fa-trash-o" data-id="1" aria-hidden="true"></i></td>
-                        </tr> -->
                     </tbody>
                 </table>
                 <div class="page-number">
@@ -223,7 +213,7 @@
                         <li>Next</li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
             <!-- /.table-db -->
         </div>
         <!-- /.main-content -->
@@ -251,9 +241,9 @@
     </div> -->
 
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/util/aes.js"></script>
     <script src="/js/main.js" type="module"></script>
 </body>
 

@@ -1,0 +1,108 @@
+.box-detail-job {
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+    
+    &.box-white {
+        margin-top: 0.3rem;
+    }
+
+    .company-logo {
+        margin-right: 2.4rem;
+        margin-left: calc(2.4rem - 1.6rem);
+    }
+
+    .box-company-logo {
+        width: 11rem;
+        height: 11rem;
+        display: flex;
+        @include center();
+        border: 0.2rem solid #eee;
+        border-radius: 7.5rem;
+        overflow: hidden;
+    }
+
+    .box-info-job {
+        .job-title {
+            color: $green;
+        }
+
+        .company-title {
+            font-weight: 700;
+            margin: 1rem 0;
+            
+            a {
+                color: rgba($color: $text-color, $alpha: 0.9);
+            }
+        }
+    }
+}
+
+.detail-recruitment {
+    text-align: justify;
+}
+
+.recruitment-info {
+    .general, .address {
+        padding: 2rem 2rem 0;
+
+        h4 {
+            margin-bottom: 1rem;
+            text-decoration-line: underline;
+        }
+    }
+
+    .address {
+        padding-top: 0;
+        padding-bottom: 2rem;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .general {
+        &-main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &-item {
+            width: 33.33%;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            display: flex;
+
+            img {
+                padding-right: 1.2rem;
+            }
+        }
+    }
+
+    .job-data {
+        margin-top: 2rem;
+
+        h3 {
+            margin: 2rem 0 1rem;
+        }
+    }
+}
+
+.recruitment-company-info {
+    .box-item {
+        display: flex;
+        align-items: flex-start;
+        
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        img {
+            margin-right: 1.2rem;
+        }
+    }
+}

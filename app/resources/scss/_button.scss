@@ -1,3 +1,5 @@
+@import './utilities/mixin';
+
 @mixin btn-custom ($color, $bg-color) {
     color: $color;
     background-color: $bg-color;
@@ -18,5 +20,23 @@
 
     &-exit {
         @include btn-custom($btn-color--secondary, $btn-background--secondary);
+    }
+
+    &-follow, &-unfollow, &-apply-current {
+        @include btn-custom($btn-color--success, $btn-background--success);
+        padding: 1rem 3.5rem !important;
+
+        &:hover {
+            @include btn-custom($btn-color--success, rgba($btn-background--success, .9));
+        }
+    }
+
+    &-apply-current {
+        display: flex;
+        @include center();
+
+        i {
+            padding-right: 0.6rem;
+        }
     }
 }

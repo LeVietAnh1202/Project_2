@@ -1,68 +1,119 @@
-let pageActive = $('.page-number li:nth-child(2)');
-const pageNumberLast = $('.page-number li:nth-last-child(2)').text();
-let pageNumberSelected;
-const pageList = $('.page-number li:not(:first-child, :last-child)');
-const previous = $('.page-number li:first-child');
-const next = $('.page-number li:last-child');
+import pageNumber from "./page-number.js";
 
-function selectPageNumber() {
-
-    // Chọn trang muốn hiển thị
-    pageList.click((e) => {
-        pageNumberSelected = $(e.target);   // Thẻ li của trang được chọn
-        changePageNumber()
-    });
-
-    // Bấm nút Privious để chọn trang trước đó
-    previous.click(() => {
-        pageNumberSelected = pageActive.prev();
-        changePageNumber();
-    });
-    
-    // Bấm nút next để chọn trang tiếp theo
-    next.click(() => {
-        pageNumberSelected = pageActive.next();
-        changePageNumber();
-    });
-
-}
-
-// Đổi active sang trang được chọn
-function activePageNumber() {
-    console.assert('1');
-    pageActive.removeClass('active');
-    pageNumberSelected.addClass('active');
-    pageActive = pageNumberSelected;
-}
-
-// Nếu trang đầu tiên được chọn thì hủy kích hoạt nút Previous
-function checkPrevious() {
-    console.assert('2');
-    if (pageActive.text() != 1) {
-        previous.removeClass('disabled');
+export default class Table {
+    numberStartPage = 0;
+    constructor(obj) {
+        this.headings = obj.headings;
+        this.records = obj.records;
+        this.page = obj.page;
+        this.pageSize = obj.pageSize;
+        this.renderRecordFn = obj.renderRecordFn;
+        this.primaryKey = obj.primaryKey;
     }
-    else {
-        previous.addClass('disabled');
-    }
-}
 
-// Nếu trang cuối cùng được chọn thì hủy kích hoạt nút Next
-function checkNext() {
-    console.assert('3');
-    if (pageActive.text() != pageNumberLast) {
-        next.removeClass('disabled');
+    headingContent() {
+        return this.headings.map(heading => `<th scope="col">${heading}</th>`).join('')
     }
-    else {
-        next.addClass('disabled');
+
+    bodyContent(classTbl, hasAction) {
+        // let pageNumber = (this.page - 1) * this.pageSize;
+
+        return this.records.map(record => {
+            const recordContent = this.renderRecordFn(record);
+            if (recordContent != '') {
+                return `<tr>
+                    <th scope="row"><input type="checkbox" name="selectRow-tbl-${classTbl[classTbl.length-1]}" id="selectRow-tbl-${classTbl[classTbl.length-1]}" data-id="${record[this.primaryKey]}" /></th>
+                    <td>${++this.numberStartPage}</td>
+                    ${this.renderRecordFn(record)}
+                    ${
+                        hasAction == 'noAction' ? '' : `
+                        <td><i class="fa fa-pencil-square-o" data-id="${record[this.primaryKey]}" aria-hidden="true"></i></td>
+                        <td><i class="fa fa-trash-o" data-id="${record[this.primaryKey]}" aria-hidden="true"></i></td>
+                        `
+                    }   
+                </tr>`
+            }
+        }
+            
+        ).join('');
     }
-}
 
-function changePageNumber() {
-    activePageNumber();
-    checkPrevious();
-    checkNext();
-}
+    createTbl(classTbl, hasAction) {
+        let thead = `
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="selectAll-tbl-${classTbl[classTbl.length-1]}" id="selectAll-tbl-${classTbl[classTbl.length-1]}"></th>
+                    <th scope="col">#</th>
+                    ${this.headingContent()}
+                    ${hasAction == 'noAction' ? '' : '<th colspan="2">Action</th>'}
+                </tr>
+            </thead>
+        `;
 
-export default () => {
-    selectPageNumber();
-}
+        let tbody = `
+            <tbody>
+                ${this.bodyContent(classTbl, hasAction)}
+            </tbody>
+        `;
+
+        let tableForm = `
+            <div class="${classTbl}">
+                <table class="table table-bordered table-hover table-responsive-md">
+                    ${thead}
+                    ${tbody}
+                </table>
+                <div class="page-number page-number-${classTbl[classTbl.length-1]}">
+                    <p>Hiển thị bản ghi từ ${this.page} đến ${this.numberStartPage} trên tổng số ${this.numberStartPage}</p>
+                    <ul>
+                        <li class="disabled">Previous</li>
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>Next</li>
+                    </ul>
+                </div>
+            </div>
+        `
+        // let tableForm = `
+        //     <div class="${classTbl}">
+        //         <table class="table table-bordered table-hover table-responsive-md">
+        //             ${thead}
+        //             ${tbody}
+        //         </table>
+        //         <div class="page-number page-number-${classTbl[classTbl.length-1]}">
+        //             <p>Hiển thị bản ghi từ ${this.page} đến ${this.page - 1 + this.records.length} trên tổng số ${this.records.length}</p>
+        //             <ul>
+        //                 <li class="disabled">Previous</li>
+        //                 <li class="active">1</li>
+        //                 <li>2</li>
+        //                 <li>3</li>
+        //                 <li>4</li>
+        //                 <li>5</li>
+        //                 <li>Next</li>
+        //             </ul>
+        //         </div>
+        //     </div>
+        // `
+
+        let tblDb;
+        if (classTbl == 'table-db-1') {
+            tblDb = `
+                <div class="table-db mt-4">
+                    ${tableForm}
+                </div>
+            `;
+            $('.table-db').remove();
+            $('.search').after(tblDb);
+        }
+        else {
+            tblDb = tableForm;
+            $('.table-db-2').remove();
+            $('.table-db-1').after(tblDb);
+            // $('.table-db').addClass('tbl-d-flex');
+        }
+
+        pageNumber(classTbl[classTbl.length-1]);
+    }
+};

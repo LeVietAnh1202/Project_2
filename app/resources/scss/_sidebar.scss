@@ -110,3 +110,9 @@
         transition: display 1s ease-in-out;
     }
 }
+
+@media only screen and (min-width: 769px) {
+    .sidebar {
+        display: block; // !important
+    }
+}

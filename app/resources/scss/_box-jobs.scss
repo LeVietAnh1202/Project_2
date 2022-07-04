@@ -1,0 +1,199 @@
+.container-internship {
+    background-color: $container-internship-background;
+
+    #box-feature-jobs,
+    #box-companies {
+        margin-bottom: 2.5rem;
+        background-color: $box-jobs-background;
+        border-radius: $radius-default;
+
+        .box-header {
+            display: flex;
+            align-items: center;
+            padding: 2rem 2rem 1rem;
+
+            .fa-star {
+                color: $green;
+                font-size: 1.6rem;
+                margin-right: 1rem;
+            }
+
+            h2 {
+                margin: 0;
+            }
+        }
+
+
+
+        .col-md-4,
+        .col-md-2 {
+            padding: 1rem;
+        }
+    }
+
+    #box-feature-jobs {}
+
+    #box-companies {
+
+        .companies {
+            .col-md-2 {
+                padding: 1rem;
+
+                .companies-item {
+                    border: 1px solid rgba($color: #000000, $alpha: .1);
+                    border-radius: $radius-default;
+                    display: flex;
+                    height: 10rem;
+                    @include center();
+
+                    img {
+                        height: 7.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.feature-jobs,
+.companies {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.feature-jobs {
+    &-item {
+        background-color: white;
+        box-shadow: 0.2rem 0.2rem 1.2rem #212f3f1a;
+        padding: 1.2rem 1.2rem 1rem;
+        border-radius: $radius-default;
+        display: flex;
+        flex-direction: column;
+
+        .top-infor {
+            display: flex;
+            // @include center();
+            // align-items: center;
+
+            img {
+                width: $img-job-width;
+                // height: $img-job-height;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .job-company {
+                padding-left: 1.2rem;
+                padding-right: 1.2rem;
+                overflow: hidden;
+                text-overflow: ellipsis !important;
+                white-space: nowrap !important;
+                min-height: 44px;
+
+                .job-title,
+                .company {
+                    overflow: hidden;
+                    text-overflow: ellipsis !important;
+                    white-space: nowrap !important;
+                }
+
+                .job-title {
+                    margin-bottom: 0.3rem;
+                    font-weight: bold;
+                    color: $job-title-color;
+                    cursor: pointer;
+                }
+
+                .company {
+                    color: $company-job-box;
+                }
+            }
+        }
+
+        .bot-infor {
+            display: flex;
+            margin-top: 0.8rem;
+
+            .salary,
+            .address,
+            .time {
+                color: $tag-color;
+                background-color: $tag-background-color;
+                margin-right: 0.3rem;
+                font-size: 1.2rem;
+                padding: 0.2rem 0.9rem;
+                border-radius: $radius-default;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.bg-highlight {
+    background-color: #f2fbf6;
+}
+
+.job-listing {
+    .box-body {
+        padding-top: 1rem !important;
+    }
+
+    .col-md-12 {
+        padding: 1rem;
+    }
+
+    // .bg-highlight {
+    //     background-color: #f2fbf6;
+    // }
+
+    .feature-jobs-item {
+        flex-direction: row;
+
+        .avatar {
+            // width: 100% !important;
+            height: 80px;
+            overflow: hidden;
+            width: 80px;
+            display: flex;
+            @include center();
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .right-infor {
+            margin-left: 1.2rem;
+        }
+
+        .right-infor,
+        .top-infor {
+            width: 100%;
+        }
+
+        .icon-heart {
+            color: #00b14f;
+            background: #f2fbf6;
+            border-radius: 3px;
+            padding: 5px;
+            line-height: 1.3rem;
+
+            .fa-heart-o,
+            .fa-heart {
+                font-size: 1.3rem;
+
+                &:hover {
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #box-feature-jobs {
+        margin-top: 3.5rem;
+    }
+}
