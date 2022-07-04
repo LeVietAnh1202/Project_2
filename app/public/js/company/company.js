@@ -2,7 +2,7 @@ import Table from "../table.js";
 import getApi from "../util/getApi.js";
 import updateDatabase from "../update-database.js";
 import SearchForm from "../model/search-form.model.js";
-import InsertForm from "../model/Insert-form.model.js";
+import InsertForm from "../model/insert-form.model.js";
 import EditForm from "../model/edit-form.model.js";
 import ConfirmDelete from "../model/confirm-delete.model.js";
 import pageNumber from "../page-number.js";
